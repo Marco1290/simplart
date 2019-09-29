@@ -10,28 +10,21 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class Main : Form
+    public partial class ProductView : Form
     {
-        public Main()
+        public ProductView()
         {
             InitializeComponent();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-       
     }
 }
