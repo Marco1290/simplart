@@ -10,28 +10,23 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class Main : Form
+    public partial class Signin : Form
     {
-        public Main()
+        public Signin()
         {
             InitializeComponent();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Main main = new Main();
+            main.Show();
+            Hide();
         }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-       
     }
 }
