@@ -23,8 +23,8 @@ namespace simplart
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) // Test result.
             {
-                //Do whatever you want
-                //openFileDialog1.FileName .....
+                TextBox t1 = (TextBox)Controls["textBox3"];
+                t1.Text = openFileDialog1.FileName;
             }
         }
     }

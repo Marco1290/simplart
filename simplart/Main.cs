@@ -89,7 +89,7 @@ namespace simplart
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
             // Confirm user wants to close
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Voulez-vous vraiment quitter Simplart ?", "Fermer", MessageBoxButtons.YesNo))
             {
                 case DialogResult.Yes:
                     signin.Dispose();
