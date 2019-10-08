@@ -12,8 +12,12 @@ namespace simplart
 {
     public partial class Signin : Form
     {
+        private Main main;
+        private Signup signup;
         public Signin()
         {
+            signup = new Signup();
+            this.main = new Main(this);
             InitializeComponent();
         }
 
@@ -24,9 +28,16 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
             main.Show();
             Hide();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            signup.ShowDialog();
+      
+        }
+        
+    
     }
 }

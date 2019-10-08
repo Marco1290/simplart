@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Musique");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Film");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Peinture");
@@ -49,6 +50,7 @@
             this.mesProduitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesCommandesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesStatistiquesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +62,7 @@
             this.textBox1.Location = new System.Drawing.Point(179, 38);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(307, 20);
+            this.textBox1.Size = new System.Drawing.Size(329, 20);
             this.textBox1.TabIndex = 0;
             // 
             // button2
@@ -100,6 +102,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(415, 317);
             this.flowLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // flowLayoutPanel2
             // 
@@ -150,8 +153,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monPanierToolStripMenuItem,
             this.mesStatistiquesToolStripMenuItem,
-            this.seDéconnecterToolStripMenuItem,
-            this.artistesToolStripMenuItem});
+            this.artistesToolStripMenuItem,
+            this.seDéconnecterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(705, 24);
@@ -189,20 +192,25 @@
             // mesProduitsToolStripMenuItem
             // 
             this.mesProduitsToolStripMenuItem.Name = "mesProduitsToolStripMenuItem";
-            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesProduitsToolStripMenuItem.Text = "Mes produits";
             // 
             // mesCommandesToolStripMenuItem
             // 
             this.mesCommandesToolStripMenuItem.Name = "mesCommandesToolStripMenuItem";
-            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesCommandesToolStripMenuItem.Text = "Mes commandes";
             // 
             // mesStatistiquesToolStripMenuItem1
             // 
             this.mesStatistiquesToolStripMenuItem1.Name = "mesStatistiquesToolStripMenuItem1";
-            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mesStatistiquesToolStripMenuItem1.Text = "Mes Statistiques";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Main
             // 
@@ -249,6 +257,7 @@
         private System.Windows.Forms.ToolStripMenuItem mesProduitsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesCommandesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesStatistiquesToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
