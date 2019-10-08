@@ -53,11 +53,17 @@
     <Compile Include="ArtistView\CreateProduct.Designer.cs">
       <DependentUpon>CreateProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientView\Form1.cs">
+    <Compile Include="ArtistView\ListCommandes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientView\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ArtistView\ListCommandes.Designer.cs">
+      <DependentUpon>ListCommandes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientView\Panier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientView\Panier.Designer.cs">
+      <DependentUpon>Panier.cs</DependentUpon>
     </Compile>
     <Compile Include="Signin.cs">
       <SubType>Form</SubType>
@@ -65,10 +71,10 @@
     <Compile Include="Signin.Designer.cs">
       <DependentUpon>Signin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListProducts.cs">
+    <Compile Include="ArtistView\ListProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListProducts.Designer.cs">
+    <Compile Include="ArtistView\ListProducts.Designer.cs">
       <DependentUpon>ListProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -91,8 +97,17 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClientView\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ArtistView\CreateProduct.resx">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistView\ListCommandes.resx">
+      <DependentUpon>ListCommandes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistView\ListProducts.resx">
+      <DependentUpon>ListProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientView\Panier.resx">
+      <DependentUpon>Panier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signin.resx">
       <DependentUpon>Signin.cs</DependentUpon>

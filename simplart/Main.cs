@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplart.ClientView;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,32 +23,48 @@ namespace simplart
         private void Main_Load(object sender, EventArgs e)
         {
             Control flow = ((Form)sender).Controls["flowLayoutPanel1"];
+            ((FlowLayoutPanel)flow).AutoScroll = true;
 
             for (int i = 0; i < 10; ++i)
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-                flowLayoutPanel.AutoScroll = true;
+
                 Label lbNom = new Label();
+                lbNom.AutoSize = false;
                 lbNom.Text = "Test";
+                lbNom.TextAlign = ContentAlignment.MiddleCenter;
+
                 Label lbPrix = new Label();
+                lbPrix.AutoSize = false;
                 lbPrix.Text = "45 .-";
+                lbPrix.TextAlign = ContentAlignment.MiddleCenter;
+
                 flowLayoutPanel.Size = new Size(78, 122);
 
-                lbNom.Size = new Size(78, 20);
-                lbPrix.Size = new Size(78, 20);
+                lbNom.Size = new Size(75, 20);
+                lbPrix.Size = new Size(75, 20);
 
 
                 PictureBox picture = new PictureBox();
-                picture.Size = new Size(78, 50);
+                picture.Size = new Size(78, 70);
                 flowLayoutPanel.Controls.Add(picture);
                 flowLayoutPanel.Controls.Add(lbNom);
                 flowLayoutPanel.Controls.Add(lbPrix);
-
+                flowLayoutPanel.Click += new EventHandler(produit_click);
+                foreach (Control control in flowLayoutPanel.Controls)
+                {
+                    control.Click += new EventHandler(produit_click);
+                }
                 flow.Controls.Add(flowLayoutPanel);
                 picture.Image = simplart.Properties.Resources.logo;
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Refresh();
             }
+        }
+
+        private void produit_click(object sender, System.EventArgs e)
+        {
+            new ProductView().ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,6 +107,18 @@ namespace simplart
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void monPanierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Panier panier = new Panier();
+            panier.ShowDialog();
+        }
+
+        private void mesProduitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListProducts listProducts = new ListProducts();
+            listProducts.Show();
         }
     }
 }

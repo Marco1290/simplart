@@ -39,22 +39,22 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.monPanierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesStatistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artistesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesProduitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesCommandesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesStatistiquesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -89,7 +89,7 @@
             this.listView1.Location = new System.Drawing.Point(29, 76);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(71, 175);
+            this.listView1.Size = new System.Drawing.Size(69, 299);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -114,17 +114,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(78, 122);
             this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::simplart.Properties.Resources.bsi_toomt14;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -166,18 +155,13 @@
             this.monPanierToolStripMenuItem.Name = "monPanierToolStripMenuItem";
             this.monPanierToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.monPanierToolStripMenuItem.Text = "Mon Panier";
+            this.monPanierToolStripMenuItem.Click += new System.EventHandler(this.monPanierToolStripMenuItem_Click);
             // 
             // mesStatistiquesToolStripMenuItem
             // 
             this.mesStatistiquesToolStripMenuItem.Name = "mesStatistiquesToolStripMenuItem";
             this.mesStatistiquesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.mesStatistiquesToolStripMenuItem.Text = "Mes Statistiques";
-            // 
-            // seDéconnecterToolStripMenuItem
-            // 
-            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
-            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
             // 
             // artistesToolStripMenuItem
             // 
@@ -192,25 +176,43 @@
             // mesProduitsToolStripMenuItem
             // 
             this.mesProduitsToolStripMenuItem.Name = "mesProduitsToolStripMenuItem";
-            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.mesProduitsToolStripMenuItem.Text = "Mes produits";
+            this.mesProduitsToolStripMenuItem.Click += new System.EventHandler(this.mesProduitsToolStripMenuItem_Click);
             // 
             // mesCommandesToolStripMenuItem
             // 
             this.mesCommandesToolStripMenuItem.Name = "mesCommandesToolStripMenuItem";
-            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.mesCommandesToolStripMenuItem.Text = "Mes commandes";
             // 
             // mesStatistiquesToolStripMenuItem1
             // 
             this.mesStatistiquesToolStripMenuItem1.Name = "mesStatistiquesToolStripMenuItem1";
-            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.mesStatistiquesToolStripMenuItem1.Text = "Mes Statistiques";
+            // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::simplart.Properties.Resources.bsi_toomt14;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -231,9 +233,9 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

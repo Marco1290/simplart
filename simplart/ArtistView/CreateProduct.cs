@@ -16,5 +16,16 @@ namespace simplart
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                //Do whatever you want
+                //openFileDialog1.FileName .....
+            }
+        }
     }
 }

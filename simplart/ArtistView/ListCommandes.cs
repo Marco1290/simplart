@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace simplart.ClientView
+namespace simplart.ArtistView
 {
-    public partial class Form1 : Form
+    public partial class ListCommandes : Form
     {
-        public Form1()
+        public ListCommandes()
         {
             InitializeComponent();
         }
