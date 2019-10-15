@@ -59,6 +59,12 @@
     <Compile Include="ArtistView\ListCommandes.Designer.cs">
       <DependentUpon>ListCommandes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientView\MesCommandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientView\MesCommandes.Designer.cs">
+      <DependentUpon>MesCommandes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientView\Panier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <EmbeddedResource Include="ArtistView\ListProducts.resx">
       <DependentUpon>ListProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientView\MesCommandes.resx">
+      <DependentUpon>MesCommandes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientView\Panier.resx">
       <DependentUpon>Panier.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bsi_toomt14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

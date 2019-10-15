@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +49,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.SlateGray;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(308, 350);
+            this.button2.Location = new System.Drawing.Point(308, 372);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 27);
             this.button2.TabIndex = 12;
@@ -57,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 237);
+            this.label2.Location = new System.Drawing.Point(305, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 11;
@@ -66,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 193);
+            this.label1.Location = new System.Drawing.Point(305, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 10;
@@ -74,14 +76,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(308, 253);
+            this.textBox2.Location = new System.Drawing.Point(308, 242);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(148, 20);
             this.textBox2.TabIndex = 8;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(308, 209);
+            this.textBox1.Location = new System.Drawing.Point(308, 200);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 20);
             this.textBox1.TabIndex = 7;
@@ -98,7 +100,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(308, 305);
+            this.numericUpDown1.Location = new System.Drawing.Point(308, 287);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             10,
             0,
@@ -116,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 289);
+            this.label3.Location = new System.Drawing.Point(305, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 14;
@@ -125,7 +127,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(305, 145);
+            this.label4.Location = new System.Drawing.Point(305, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 16;
@@ -133,7 +135,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(308, 161);
+            this.textBox3.Location = new System.Drawing.Point(308, 152);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 20);
             this.textBox3.TabIndex = 15;
@@ -151,11 +153,33 @@
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Client",
+            "Artiste"});
+            this.comboBox2.Location = new System.Drawing.Point(308, 336);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(148, 21);
+            this.comboBox2.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(305, 320);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Type d\'utilisateur";
+            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 444);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -190,5 +214,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label5;
     }
 }

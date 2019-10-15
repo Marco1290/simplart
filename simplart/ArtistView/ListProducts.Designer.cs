@@ -31,15 +31,26 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrixU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantité = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(160, 130);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nom,
+            this.PrixU,
+            this.Quantité,
+            this.categorie,
+            this.Action});
+            this.dataGridView1.Location = new System.Drawing.Point(122, 131);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 184);
             this.dataGridView1.TabIndex = 0;
             // 
             // label2
@@ -54,13 +65,38 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(393, 360);
+            this.button2.Location = new System.Drawing.Point(485, 354);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(179, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Ajouter un produit";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom du produit";
+            this.nom.Name = "nom";
+            // 
+            // PrixU
+            // 
+            this.PrixU.HeaderText = "Prix unitaire";
+            this.PrixU.Name = "PrixU";
+            // 
+            // Quantité
+            // 
+            this.Quantité.HeaderText = "Quantité en stock";
+            this.Quantité.Name = "Quantité";
+            // 
+            // categorie
+            // 
+            this.categorie.HeaderText = "Catégorie";
+            this.categorie.Name = "categorie";
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
             // 
             // ListProducts
             // 
@@ -83,5 +119,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrixU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantité;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categorie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
     }
 }

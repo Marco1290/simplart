@@ -27,5 +27,10 @@ namespace simplart
                 t1.Text = openFileDialog1.FileName;
             }
         }
+
+        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
