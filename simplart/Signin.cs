@@ -18,7 +18,6 @@ namespace simplart
         public Signin()
         {
             signup = new Signup();
-            this.main = new Main(this);
             InitializeComponent();
         }
 
@@ -40,7 +39,7 @@ namespace simplart
             {
                 UserAuthService.username = "client";
             }
-
+            this.main = new Main(this);
             main.Show();
             Hide();
         }

@@ -1,4 +1,5 @@
-﻿using simplart.ClientView;
+﻿using simplart.ArtistView;
+using simplart.ClientView;
 using simplart.Services;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace simplart
         {
             if (!UserAuthService.isArtist())
             {
-                this.Controls["artistesToolStripMenuItem"].Hide();
+                artistesToolStripMenuItem.Visible = false;
             }
         }
 
@@ -129,6 +130,24 @@ namespace simplart
         {
             ListProducts listProducts = new ListProducts();
             listProducts.Show();
+        }
+
+        private void mesStatistiquesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            StatsForm statsForm = new StatsForm();
+            statsForm.Show();
+        }
+
+        private void mesCommandesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListCommandes listCommandes = new ListCommandes();
+            listCommandes.Show();
+        }
+
+        private void mesStatistiquesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatsClientForm statsClientForm = new StatsClientForm();
+            statsClientForm.Show();
         }
     }
 }
