@@ -71,6 +71,7 @@
     <Compile Include="ClientView\Panier.Designer.cs">
       <DependentUpon>Panier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UserAuthService.cs" />
     <Compile Include="Signin.cs">
       <SubType>Form</SubType>
     </Compile>

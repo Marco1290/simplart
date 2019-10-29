@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplart.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,18 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
+            TextBox username = (TextBox)this.Controls["username"];
+            TextBox password = (TextBox)this.Controls["password"];
+
+            if (username.Text.Equals("artiste"))
+            {
+                UserAuthService.username = username.Text;
+            }
+            else
+            {
+                UserAuthService.username = "client";
+            }
+
             main.Show();
             Hide();
         }

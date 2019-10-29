@@ -1,4 +1,5 @@
 ﻿using simplart.ClientView;
+using simplart.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,15 @@ namespace simplart
         {
             this.signin = signin;
             InitializeComponent();
+            initUserComponent();
+        }
+
+        private void initUserComponent()
+        {
+            if (!UserAuthService.isArtist())
+            {
+                this.Controls["artistesToolStripMenuItem"].Hide();
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
