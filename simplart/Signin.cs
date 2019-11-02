@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class Signin : Form
+    public partial class fv_signin : Form
     {
         private Main main;
-        private Signup signup;
-        public Signin()
+        private fv_signup signup;
+        public fv_signin()
         {
-            signup = new Signup();
+            signup = new fv_signup();
             InitializeComponent();
         }
 
@@ -28,16 +28,15 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TextBox username = (TextBox)this.Controls["username"];
-            TextBox password = (TextBox)this.Controls["password"];
+            
 
-            if (username.Text.Equals("artiste"))
+            if (txt_username.Text.Equals("artiste"))
             {
-                UserAuthService.username = username.Text;
+                UserAuthService.Username = txt_username.Text;
             }
             else
             {
-                UserAuthService.username = "client";
+                UserAuthService.Username = "client";
             }
             this.main = new Main(this);
             main.Show();
@@ -49,7 +48,10 @@ namespace simplart
             signup.ShowDialog();
       
         }
-        
-    
+
+        private void txt_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace simplart.ArtistView
+namespace simplart
 {
-    public partial class ListCommandes : Form
+    public partial class fv_products : Form
     {
-        public ListCommandes()
+        public fv_products()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            fv_create_product createProduct = new fv_create_product();
+            createProduct.ShowDialog();
         }
     }
 }

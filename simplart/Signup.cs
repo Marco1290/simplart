@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class Signup : Form
+    public partial class fv_signup : Form
     {
-        public Signup()
+        public fv_signup()
         {
             InitializeComponent();
         }

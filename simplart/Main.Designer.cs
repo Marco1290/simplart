@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.flp_articles_list = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mns_primary = new System.Windows.Forms.MenuStrip();
             this.monPanierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesCommandesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mesStatistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,35 +46,35 @@
             this.mesStatistiquesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.lbl_title = new System.Windows.Forms.Label();
+            this.pic_search = new System.Windows.Forms.PictureBox();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.flp_articles_list.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.mns_primary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(94, 92);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(478, 26);
-            this.textBox1.TabIndex = 0;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(94, 92);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(478, 26);
+            this.txt_search.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // flp_articles_list
             // 
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(94, 136);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(514, 285);
-            this.flowLayoutPanel1.TabIndex = 4;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.flp_articles_list.Controls.Add(this.flowLayoutPanel2);
+            this.flp_articles_list.Location = new System.Drawing.Point(94, 136);
+            this.flp_articles_list.Margin = new System.Windows.Forms.Padding(2);
+            this.flp_articles_list.Name = "flp_articles_list";
+            this.flp_articles_list.Size = new System.Drawing.Size(514, 285);
+            this.flp_articles_list.TabIndex = 4;
+            this.flp_articles_list.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // flowLayoutPanel2
             // 
@@ -120,19 +120,19 @@
             this.label2.Text = "45 .-";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuStrip1
+            // mns_primary
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mns_primary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monPanierToolStripMenuItem,
             this.mesCommandesToolStripMenuItem1,
             this.mesStatistiquesToolStripMenuItem,
             this.artistesToolStripMenuItem,
             this.seDéconnecterToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(705, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mns_primary.Location = new System.Drawing.Point(0, 0);
+            this.mns_primary.Name = "mns_primary";
+            this.mns_primary.Size = new System.Drawing.Size(705, 24);
+            this.mns_primary.TabIndex = 5;
+            this.mns_primary.Text = "menuStrip1";
             // 
             // monPanierToolStripMenuItem
             // 
@@ -144,8 +144,9 @@
             // mesCommandesToolStripMenuItem1
             // 
             this.mesCommandesToolStripMenuItem1.Name = "mesCommandesToolStripMenuItem1";
-            this.mesCommandesToolStripMenuItem1.Size = new System.Drawing.Size(112, 20);
-            this.mesCommandesToolStripMenuItem1.Text = "Mes Commandes";
+            this.mesCommandesToolStripMenuItem1.Size = new System.Drawing.Size(80, 20);
+            this.mesCommandesToolStripMenuItem1.Text = "Mes Achats";
+            this.mesCommandesToolStripMenuItem1.Click += new System.EventHandler(this.mesCommandesToolStripMenuItem1_Click);
             // 
             // mesStatistiquesToolStripMenuItem
             // 
@@ -167,21 +168,21 @@
             // mesProduitsToolStripMenuItem
             // 
             this.mesProduitsToolStripMenuItem.Name = "mesProduitsToolStripMenuItem";
-            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.mesProduitsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesProduitsToolStripMenuItem.Text = "Mes produits";
             this.mesProduitsToolStripMenuItem.Click += new System.EventHandler(this.mesProduitsToolStripMenuItem_Click);
             // 
             // mesCommandesToolStripMenuItem
             // 
             this.mesCommandesToolStripMenuItem.Name = "mesCommandesToolStripMenuItem";
-            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.mesCommandesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesCommandesToolStripMenuItem.Text = "Mes commandes";
             this.mesCommandesToolStripMenuItem.Click += new System.EventHandler(this.mesCommandesToolStripMenuItem_Click);
             // 
             // mesStatistiquesToolStripMenuItem1
             // 
             this.mesStatistiquesToolStripMenuItem1.Name = "mesStatistiquesToolStripMenuItem1";
-            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.mesStatistiquesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mesStatistiquesToolStripMenuItem1.Text = "Mes Statistiques";
             this.mesStatistiquesToolStripMenuItem1.Click += new System.EventHandler(this.mesStatistiquesToolStripMenuItem1_Click);
             // 
@@ -190,41 +191,42 @@
             this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
             this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label4
+            // lbl_title
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Simplart";
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Location = new System.Drawing.Point(304, 46);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(102, 29);
+            this.lbl_title.TabIndex = 7;
+            this.lbl_title.Text = "Simplart";
             // 
-            // pictureBox3
+            // pic_search
             // 
-            this.pictureBox3.Image = global::simplart.Properties.Resources.icons8_search_512;
-            this.pictureBox3.Location = new System.Drawing.Point(577, 92);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.pic_search.Image = global::simplart.Properties.Resources.icons8_search_512;
+            this.pic_search.Location = new System.Drawing.Point(577, 92);
+            this.pic_search.Name = "pic_search";
+            this.pic_search.Size = new System.Drawing.Size(31, 26);
+            this.pic_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_search.TabIndex = 9;
+            this.pic_search.TabStop = false;
             // 
-            // pictureBox2
+            // pic_logo
             // 
-            this.pictureBox2.Image = global::simplart.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.pic_logo.Image = global::simplart.Properties.Resources.logo;
+            this.pic_logo.Location = new System.Drawing.Point(12, 34);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(39, 41);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_logo.TabIndex = 8;
+            this.pic_logo.TabStop = false;
             // 
             // Main
             // 
@@ -232,25 +234,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(705, 432);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pic_search);
+            this.Controls.Add(this.pic_logo);
+            this.Controls.Add(this.lbl_title);
+            this.Controls.Add(this.flp_articles_list);
+            this.Controls.Add(this.txt_search);
+            this.Controls.Add(this.mns_primary);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mns_primary;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Simplart";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flp_articles_list.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.mns_primary.ResumeLayout(false);
+            this.mns_primary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,13 +260,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.FlowLayoutPanel flp_articles_list;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mns_primary;
         private System.Windows.Forms.ToolStripMenuItem monPanierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesStatistiquesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seDéconnecterToolStripMenuItem;
@@ -273,9 +275,9 @@
         private System.Windows.Forms.ToolStripMenuItem mesCommandesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesStatistiquesToolStripMenuItem1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.PictureBox pic_search;
         private System.Windows.Forms.ToolStripMenuItem mesCommandesToolStripMenuItem1;
     }
 }

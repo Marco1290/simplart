@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace simplart.ClientView
 {
-    public partial class Panier : Form
+    public partial class fv_client_orders : Form
     {
-        public Panier()
+        public fv_client_orders()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

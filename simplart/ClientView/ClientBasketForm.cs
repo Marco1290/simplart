@@ -8,19 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace simplart
+namespace simplart.ClientView
 {
-    public partial class ListProducts : Form
+    public partial class fv_basket : Form
     {
-        public ListProducts()
+        public fv_basket()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            CreateProduct createProduct = new CreateProduct();
-            createProduct.ShowDialog();
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace simplart
 {
-    partial class Signin
+    partial class fv_signin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,98 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.username = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.lbl_username = new System.Windows.Forms.Label();
+            this.lbl_password = new System.Windows.Forms.Label();
+            this.btn_signin = new System.Windows.Forms.Button();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.lkl_signup = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // username
+            // txt_username
             // 
-            this.username.Location = new System.Drawing.Point(299, 174);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(148, 20);
-            this.username.TabIndex = 0;
+            this.txt_username.Location = new System.Drawing.Point(299, 174);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(148, 20);
+            this.txt_username.TabIndex = 0;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
-            // textBox2
+            // txt_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(299, 218);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 20);
-            this.textBox2.TabIndex = 1;
+            this.txt_password.Location = new System.Drawing.Point(299, 218);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(148, 20);
+            this.txt_password.TabIndex = 1;
+            this.txt_password.UseSystemPasswordChar = true;
             // 
-            // label1
+            // lbl_username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nom d\'utilisateur";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_username.AutoSize = true;
+            this.lbl_username.Location = new System.Drawing.Point(296, 158);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(84, 13);
+            this.lbl_username.TabIndex = 3;
+            this.lbl_username.Text = "Nom d\'utilisateur";
+            this.lbl_username.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lbl_password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 202);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mot de passe";
+            this.lbl_password.AutoSize = true;
+            this.lbl_password.Location = new System.Drawing.Point(296, 202);
+            this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Size = new System.Drawing.Size(71, 13);
+            this.lbl_password.TabIndex = 4;
+            this.lbl_password.Text = "Mot de passe";
             // 
-            // button2
+            // btn_signin
             // 
-            this.button2.BackColor = System.Drawing.Color.SlateGray;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(299, 258);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 31);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Se connecter";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_signin.BackColor = System.Drawing.Color.SlateGray;
+            this.btn_signin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_signin.Location = new System.Drawing.Point(299, 258);
+            this.btn_signin.Name = "btn_signin";
+            this.btn_signin.Size = new System.Drawing.Size(148, 31);
+            this.btn_signin.TabIndex = 6;
+            this.btn_signin.Text = "Se connecter";
+            this.btn_signin.UseVisualStyleBackColor = false;
+            this.btn_signin.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
+            // pic_logo
             // 
-            this.pictureBox1.Image = global::simplart.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(299, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pic_logo.Image = global::simplart.Properties.Resources.logo;
+            this.pic_logo.Location = new System.Drawing.Point(299, 12);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(148, 119);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_logo.TabIndex = 2;
+            this.pic_logo.TabStop = false;
             // 
-            // linkLabel1
+            // lkl_signup
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(323, 324);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 20);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "S\'inscrire ?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lkl_signup.AutoSize = true;
+            this.lkl_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkl_signup.Location = new System.Drawing.Point(323, 324);
+            this.lkl_signup.Name = "lkl_signup";
+            this.lkl_signup.Size = new System.Drawing.Size(86, 20);
+            this.lkl_signup.TabIndex = 7;
+            this.lkl_signup.TabStop = true;
+            this.lkl_signup.Text = "S\'inscrire ?";
+            this.lkl_signup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // Signin
+            // fv_signin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 377);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.username);
-            this.Name = "Signin";
+            this.Controls.Add(this.lkl_signup);
+            this.Controls.Add(this.btn_signin);
+            this.Controls.Add(this.lbl_password);
+            this.Controls.Add(this.lbl_username);
+            this.Controls.Add(this.pic_logo);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_username);
+            this.Name = "fv_signin";
             this.Text = "Sign in";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,12 +129,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.Label lbl_password;
+        private System.Windows.Forms.Button btn_signin;
+        private System.Windows.Forms.LinkLabel lkl_signup;
     }
 }

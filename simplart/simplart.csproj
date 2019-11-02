@@ -48,41 +48,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistView\CreateProduct.cs">
+    <Compile Include="ArtistView\ArtistAddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArtistView\CreateProduct.Designer.cs">
-      <DependentUpon>CreateProduct.cs</DependentUpon>
+    <Compile Include="ArtistView\ArtistAddProductForm.Designer.cs">
+      <DependentUpon>ArtistAddProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArtistView\ListCommandes.cs">
+    <Compile Include="ArtistView\ArtistOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArtistView\ListCommandes.Designer.cs">
-      <DependentUpon>ListCommandes.cs</DependentUpon>
+    <Compile Include="ArtistView\ArtistOrdersForm.Designer.cs">
+      <DependentUpon>ArtistOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArtistView\StatsForm.cs">
+    <Compile Include="ArtistView\ArtistStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArtistView\StatsForm.Designer.cs">
-      <DependentUpon>StatsForm.cs</DependentUpon>
+    <Compile Include="ArtistView\ArtistStatsForm.Designer.cs">
+      <DependentUpon>ArtistStatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientView\MesCommandes.cs">
+    <Compile Include="ClientView\ClientOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientView\MesCommandes.Designer.cs">
-      <DependentUpon>MesCommandes.cs</DependentUpon>
+    <Compile Include="ClientView\ClientOrdersForm.Designer.cs">
+      <DependentUpon>ClientOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientView\Panier.cs">
+    <Compile Include="ClientView\ClientBasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientView\Panier.Designer.cs">
-      <DependentUpon>Panier.cs</DependentUpon>
+    <Compile Include="ClientView\ClientBasketForm.Designer.cs">
+      <DependentUpon>ClientBasketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientView\StatsClientForm.cs">
+    <Compile Include="ClientView\ClientStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientView\StatsClientForm.Designer.cs">
-      <DependentUpon>StatsClientForm.cs</DependentUpon>
+    <Compile Include="ClientView\ClientStatsForm.Designer.cs">
+      <DependentUpon>ClientStatsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\UserAuthService.cs" />
     <Compile Include="Signin.cs">
@@ -91,11 +91,11 @@
     <Compile Include="Signin.Designer.cs">
       <DependentUpon>Signin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArtistView\ListProducts.cs">
+    <Compile Include="ArtistView\ArtistProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArtistView\ListProducts.Designer.cs">
-      <DependentUpon>ListProducts.cs</DependentUpon>
+    <Compile Include="ArtistView\ArtistProductsForm.Designer.cs">
+      <DependentUpon>ArtistProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientView\ProductView.cs">
+    <Compile Include="ClientView\ClientProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientView\ProductView.Designer.cs">
-      <DependentUpon>ProductView.cs</DependentUpon>
+    <Compile Include="ClientView\ClientProductForm.Designer.cs">
+      <DependentUpon>ClientProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,26 +117,26 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ArtistView\CreateProduct.resx">
-      <DependentUpon>CreateProduct.cs</DependentUpon>
+    <EmbeddedResource Include="ArtistView\ArtistAddProductForm.resx">
+      <DependentUpon>ArtistAddProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArtistView\ListCommandes.resx">
-      <DependentUpon>ListCommandes.cs</DependentUpon>
+    <EmbeddedResource Include="ArtistView\ArtistOrdersForm.resx">
+      <DependentUpon>ArtistOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArtistView\ListProducts.resx">
-      <DependentUpon>ListProducts.cs</DependentUpon>
+    <EmbeddedResource Include="ArtistView\ArtistProductsForm.resx">
+      <DependentUpon>ArtistProductsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArtistView\StatsForm.resx">
-      <DependentUpon>StatsForm.cs</DependentUpon>
+    <EmbeddedResource Include="ArtistView\ArtistStatsForm.resx">
+      <DependentUpon>ArtistStatsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientView\MesCommandes.resx">
-      <DependentUpon>MesCommandes.cs</DependentUpon>
+    <EmbeddedResource Include="ClientView\ClientOrdersForm.resx">
+      <DependentUpon>ClientOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientView\Panier.resx">
-      <DependentUpon>Panier.cs</DependentUpon>
+    <EmbeddedResource Include="ClientView\ClientBasketForm.resx">
+      <DependentUpon>ClientBasketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientView\StatsClientForm.resx">
-      <DependentUpon>StatsClientForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientView\ClientStatsForm.resx">
+      <DependentUpon>ClientStatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signin.resx">
       <DependentUpon>Signin.cs</DependentUpon>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientView\ProductView.resx">
-      <DependentUpon>ProductView.cs</DependentUpon>
+    <EmbeddedResource Include="ClientView\ClientProductForm.resx">
+      <DependentUpon>ClientProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

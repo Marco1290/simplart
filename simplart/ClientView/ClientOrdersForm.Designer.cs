@@ -1,6 +1,6 @@
 ﻿namespace simplart.ClientView
 {
-    partial class MesCommandes
+    partial class fv_client_orders
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_client_orders));
+            this.dtg_orders = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lbl_title = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtg_orders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Articles,
             this.prix,
             this.action});
-            this.dataGridView1.Location = new System.Drawing.Point(114, 114);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 216);
-            this.dataGridView1.TabIndex = 3;
+            this.dtg_orders.Location = new System.Drawing.Point(289, 166);
+            this.dtg_orders.Name = "dtg_orders";
+            this.dtg_orders.Size = new System.Drawing.Size(666, 350);
+            this.dtg_orders.TabIndex = 3;
             // 
             // ID
             // 
@@ -70,26 +71,27 @@
             this.action.HeaderText = "Action";
             this.action.Name = "action";
             // 
-            // label1
+            // lbl_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(216, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mes commandes";
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Location = new System.Drawing.Point(533, 78);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(153, 31);
+            this.lbl_title.TabIndex = 2;
+            this.lbl_title.Text = "Mes achats";
             // 
-            // MesCommandes
+            // fv_client_orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 438);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Name = "MesCommandes";
-            this.Text = "MesCommandes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ClientSize = new System.Drawing.Size(1277, 702);
+            this.Controls.Add(this.dtg_orders);
+            this.Controls.Add(this.lbl_title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "fv_client_orders";
+            this.Text = "Mes Achats";
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,11 +99,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtg_orders;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articles;
         private System.Windows.Forms.DataGridViewTextBoxColumn prix;
         private System.Windows.Forms.DataGridViewTextBoxColumn action;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_title;
     }
 }

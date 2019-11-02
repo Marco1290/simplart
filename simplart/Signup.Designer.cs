@@ -1,6 +1,6 @@
 ﻿namespace simplart
 {
-    partial class Signup
+    partial class fv_signup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,193 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            System.Windows.Forms.Button btn_signup;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_signup));
+            this.lbl_password = new System.Windows.Forms.Label();
+            this.lbl_username = new System.Windows.Forms.Label();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.nud_age = new System.Windows.Forms.NumericUpDown();
+            this.lbl_age = new System.Windows.Forms.Label();
+            this.lbl_email = new System.Windows.Forms.Label();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.lkl_return = new System.Windows.Forms.LinkLabel();
+            this.cbo_type = new System.Windows.Forms.ComboBox();
+            this.lbl_type = new System.Windows.Forms.Label();
+            btn_signup = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_age)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btn_signup
             // 
-            this.button2.BackColor = System.Drawing.Color.SlateGray;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(308, 372);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 27);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "S\'inscrire";
-            this.button2.UseVisualStyleBackColor = false;
+            btn_signup.BackColor = System.Drawing.Color.SlateGray;
+            btn_signup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_signup.Location = new System.Drawing.Point(308, 372);
+            btn_signup.Name = "btn_signup";
+            btn_signup.Size = new System.Drawing.Size(148, 27);
+            btn_signup.TabIndex = 12;
+            btn_signup.Text = "S\'inscrire";
+            btn_signup.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lbl_password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 226);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Mot de passe";
+            this.lbl_password.AutoSize = true;
+            this.lbl_password.Location = new System.Drawing.Point(305, 226);
+            this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Size = new System.Drawing.Size(71, 13);
+            this.lbl_password.TabIndex = 11;
+            this.lbl_password.Text = "Mot de passe";
             // 
-            // label1
+            // lbl_username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nom d\'utilisateur";
+            this.lbl_username.AutoSize = true;
+            this.lbl_username.Location = new System.Drawing.Point(305, 184);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(84, 13);
+            this.lbl_username.TabIndex = 10;
+            this.lbl_username.Text = "Nom d\'utilisateur";
             // 
-            // textBox2
+            // txt_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(308, 242);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 20);
-            this.textBox2.TabIndex = 8;
+            this.txt_password.Location = new System.Drawing.Point(308, 242);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(148, 20);
+            this.txt_password.TabIndex = 8;
             // 
-            // textBox1
+            // txt_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(308, 200);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 7;
+            this.txt_username.Location = new System.Drawing.Point(308, 200);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(148, 20);
+            this.txt_username.TabIndex = 7;
             // 
-            // pictureBox1
+            // pic_logo
             // 
-            this.pictureBox1.Image = global::simplart.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(308, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.pic_logo.Image = global::simplart.Properties.Resources.logo;
+            this.pic_logo.Location = new System.Drawing.Point(308, 12);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(148, 119);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_logo.TabIndex = 9;
+            this.pic_logo.TabStop = false;
             // 
-            // numericUpDown1
+            // nud_age
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(308, 287);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nud_age.Location = new System.Drawing.Point(308, 287);
+            this.nud_age.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(148, 20);
-            this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nud_age.Name = "nud_age";
+            this.nud_age.Size = new System.Drawing.Size(148, 20);
+            this.nud_age.TabIndex = 13;
+            this.nud_age.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // label3
+            // lbl_age
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 271);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Âge";
+            this.lbl_age.AutoSize = true;
+            this.lbl_age.Location = new System.Drawing.Point(305, 271);
+            this.lbl_age.Name = "lbl_age";
+            this.lbl_age.Size = new System.Drawing.Size(26, 13);
+            this.lbl_age.TabIndex = 14;
+            this.lbl_age.Text = "Âge";
             // 
-            // label4
+            // lbl_email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(305, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Email";
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Location = new System.Drawing.Point(305, 136);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(32, 13);
+            this.lbl_email.TabIndex = 16;
+            this.lbl_email.Text = "Email";
             // 
-            // textBox3
+            // txt_email
             // 
-            this.textBox3.Location = new System.Drawing.Point(308, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 20);
-            this.textBox3.TabIndex = 15;
+            this.txt_email.Location = new System.Drawing.Point(308, 152);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(148, 20);
+            this.txt_email.TabIndex = 15;
             // 
-            // linkLabel1
+            // lkl_return
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(351, 402);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(58, 20);
-            this.linkLabel1.TabIndex = 17;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Retour";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lkl_return.AutoSize = true;
+            this.lkl_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkl_return.Location = new System.Drawing.Point(351, 402);
+            this.lkl_return.Name = "lkl_return";
+            this.lkl_return.Size = new System.Drawing.Size(58, 20);
+            this.lkl_return.TabIndex = 17;
+            this.lkl_return.TabStop = true;
+            this.lkl_return.Text = "Retour";
+            this.lkl_return.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lkl_return.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // comboBox2
+            // cbo_type
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbo_type.FormattingEnabled = true;
+            this.cbo_type.Items.AddRange(new object[] {
             "Client",
             "Artiste"});
-            this.comboBox2.Location = new System.Drawing.Point(308, 336);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 21);
-            this.comboBox2.TabIndex = 19;
+            this.cbo_type.Location = new System.Drawing.Point(308, 336);
+            this.cbo_type.Name = "cbo_type";
+            this.cbo_type.Size = new System.Drawing.Size(148, 21);
+            this.cbo_type.TabIndex = 19;
             // 
-            // label5
+            // lbl_type
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(305, 320);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Type d\'utilisateur";
+            this.lbl_type.AutoSize = true;
+            this.lbl_type.Location = new System.Drawing.Point(305, 320);
+            this.lbl_type.Name = "lbl_type";
+            this.lbl_type.Size = new System.Drawing.Size(86, 13);
+            this.lbl_type.TabIndex = 20;
+            this.lbl_type.Text = "Type d\'utilisateur";
             // 
-            // Signup
+            // fv_signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 444);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Signup";
-            this.Text = "Signup";
+            this.Controls.Add(this.lbl_type);
+            this.Controls.Add(this.cbo_type);
+            this.Controls.Add(this.lkl_return);
+            this.Controls.Add(this.lbl_email);
+            this.Controls.Add(this.txt_email);
+            this.Controls.Add(this.lbl_age);
+            this.Controls.Add(this.nud_age);
+            this.Controls.Add(btn_signup);
+            this.Controls.Add(this.lbl_password);
+            this.Controls.Add(this.lbl_username);
+            this.Controls.Add(this.pic_logo);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_username);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "fv_signup";
+            this.Text = "Inscription";
             this.Load += new System.EventHandler(this.Signup_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_age)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_password;
+        private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.NumericUpDown nud_age;
+        private System.Windows.Forms.Label lbl_age;
+        private System.Windows.Forms.Label lbl_email;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.LinkLabel lkl_return;
+        private System.Windows.Forms.ComboBox cbo_type;
+        private System.Windows.Forms.Label lbl_type;
     }
 }

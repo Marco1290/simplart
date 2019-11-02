@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class CreateProduct : Form
+    public partial class fv_create_product : Form
     {
-        public CreateProduct()
+        public fv_create_product()
         {
             InitializeComponent();
         }
@@ -23,8 +23,8 @@ namespace simplart
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) // Test result.
             {
-                TextBox t1 = (TextBox)Controls["textBox3"];
-                t1.Text = openFileDialog1.FileName;
+                
+                txt_product_pic.Text = openFileDialog1.FileName;
             }
         }
 

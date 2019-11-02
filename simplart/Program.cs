@@ -19,7 +19,7 @@ namespace simplart
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Signin());
+            Application.Run(new fv_signin());
         }
     }
 }

@@ -8,11 +8,11 @@ namespace simplart.Services
 {
     class UserAuthService
     {
-        public static string username = "";
+        public static string Username = "";
 
         public static bool isArtist()
         {
-            if (username.Equals("artiste"))
+            if (Username.Equals("artiste"))
             {
                 return true;
             }

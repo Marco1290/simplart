@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace simplart.ClientView
 {
-    public partial class StatsClientForm : Form
+    public partial class fv_stats : Form
     {
-        public StatsClientForm()
+        public fv_stats()
         {
             InitializeComponent();
         }
@@ -20,13 +20,13 @@ namespace simplart.ClientView
         private void fillChart()
         {
             //AddXY value in chart1 in series named as Salary  
-            chart1.Series["nb. ventes"].Points.AddXY("Janvier 2019", "10000");
-            chart1.Series["nb. ventes"].Points.AddXY("Février 2019", "8000");
-            chart1.Series["nb. ventes"].Points.AddXY("Mars 2019", "7000");
-            chart1.Series["nb. ventes"].Points.AddXY("Avril 2019", "10000");
-            chart1.Series["nb. ventes"].Points.AddXY("Mai 2019", "8500");
+            cht_nbventes.Series["nb. ventes"].Points.AddXY("Janvier 2019", "10000");
+            cht_nbventes.Series["nb. ventes"].Points.AddXY("Février 2019", "8000");
+            cht_nbventes.Series["nb. ventes"].Points.AddXY("Mars 2019", "7000");
+            cht_nbventes.Series["nb. ventes"].Points.AddXY("Avril 2019", "10000");
+            cht_nbventes.Series["nb. ventes"].Points.AddXY("Mai 2019", "8500");
             //chart title  
-            chart1.Titles.Add("Nb. ventes par mois");
+            cht_nbventes.Titles.Add("Nb. ventes par mois");
         }
 
 

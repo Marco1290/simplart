@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace simplart
 {
-    public partial class ProductView : Form
+    public partial class fv_product : Form
     {
-        public ProductView()
+        public fv_product()
         {
             InitializeComponent();
         }

@@ -15,8 +15,8 @@ namespace simplart
 {
     public partial class Main : Form
     {
-        private Signin signin;
-        public Main(Signin signin)
+        private fv_signin signin;
+        public Main(fv_signin signin)
         {
             this.signin = signin;
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace simplart
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Control flow = ((Form)sender).Controls["flowLayoutPanel1"];
-            ((FlowLayoutPanel)flow).AutoScroll = true;
+
+            flp_articles_list.AutoScroll = true;
 
             for (int i = 0; i < 10; ++i)
             {
@@ -66,7 +66,7 @@ namespace simplart
                 {
                     control.Click += new EventHandler(produit_click);
                 }
-                flow.Controls.Add(flowLayoutPanel);
+                flp_articles_list.Controls.Add(flowLayoutPanel);
                 picture.Image = simplart.Properties.Resources.logo;
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Refresh();
@@ -75,7 +75,7 @@ namespace simplart
 
         private void produit_click(object sender, System.EventArgs e)
         {
-            new ProductView().ShowDialog();
+            new fv_product().ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -122,32 +122,44 @@ namespace simplart
 
         private void monPanierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Panier panier = new Panier();
+            fv_basket panier = new fv_basket();
             panier.ShowDialog();
         }
 
         private void mesProduitsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListProducts listProducts = new ListProducts();
+            fv_products listProducts = new fv_products();
             listProducts.Show();
         }
 
         private void mesStatistiquesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            StatsForm statsForm = new StatsForm();
+            fv_stats_artists statsForm = new fv_stats_artists();
             statsForm.Show();
         }
 
         private void mesCommandesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListCommandes listCommandes = new ListCommandes();
+            ArtistView.fv_orders listCommandes = new ArtistView.fv_orders();
             listCommandes.Show();
         }
 
         private void mesStatistiquesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StatsClientForm statsClientForm = new StatsClientForm();
+            fv_stats statsClientForm = new fv_stats();
             statsClientForm.Show();
+        }
+
+        private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.signin.Show();
+            this.Dispose();
+        }
+
+        private void mesCommandesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            fv_client_orders client_Orders = new fv_client_orders();
+            client_Orders.Show();
         }
     }
 }

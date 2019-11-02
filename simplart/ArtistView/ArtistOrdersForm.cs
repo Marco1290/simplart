@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace simplart.ClientView
+namespace simplart.ArtistView
 {
-    public partial class MesCommandes : Form
+    public partial class fv_orders : Form
     {
-        public MesCommandes()
+        public fv_orders()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
