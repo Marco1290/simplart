@@ -31,13 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_basket));
             this.btn_order = new System.Windows.Forms.Button();
             this.dtg_basket = new System.Windows.Forms.DataGridView();
+            this.lbl_title = new System.Windows.Forms.Label();
+            this.btn_clear_basket = new System.Windows.Forms.Button();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantité = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_title = new System.Windows.Forms.Label();
-            this.btn_clear_basket = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_basket)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,50 +51,27 @@
             // 
             // dtg_basket
             // 
+            this.dtg_basket.AllowUserToAddRows = false;
             this.dtg_basket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_basket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nom,
             this.PrixU,
             this.Quantité,
-            this.PrixT,
-            this.action});
+            this.PrixT});
             this.dtg_basket.Location = new System.Drawing.Point(251, 136);
             this.dtg_basket.Name = "dtg_basket";
+            this.dtg_basket.ReadOnly = true;
             this.dtg_basket.Size = new System.Drawing.Size(730, 351);
             this.dtg_basket.TabIndex = 4;
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom de l\'article";
-            this.nom.Name = "nom";
-            // 
-            // PrixU
-            // 
-            this.PrixU.HeaderText = "Prix unitaire";
-            this.PrixU.Name = "PrixU";
-            // 
-            // Quantité
-            // 
-            this.Quantité.HeaderText = "Quantité";
-            this.Quantité.Name = "Quantité";
-            // 
-            // PrixT
-            // 
-            this.PrixT.HeaderText = "Prix total";
-            this.PrixT.Name = "PrixT";
-            // 
-            // action
-            // 
-            this.action.HeaderText = "Action";
-            this.action.Name = "action";
+            this.dtg_basket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_basket_CellContentClick);
             // 
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Bernard MT Condensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbl_title.Location = new System.Drawing.Point(530, 45);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(180, 44);
+            this.lbl_title.Size = new System.Drawing.Size(174, 39);
             this.lbl_title.TabIndex = 3;
             this.lbl_title.Text = "Mon panier";
             this.lbl_title.Click += new System.EventHandler(this.label1_Click);
@@ -108,6 +84,30 @@
             this.btn_clear_basket.TabIndex = 6;
             this.btn_clear_basket.Text = "Vider le panier";
             this.btn_clear_basket.UseVisualStyleBackColor = true;
+            // 
+            // nom
+            // 
+            this.nom.HeaderText = "Nom de l\'article";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
+            // 
+            // PrixU
+            // 
+            this.PrixU.HeaderText = "Prix unitaire";
+            this.PrixU.Name = "PrixU";
+            this.PrixU.ReadOnly = true;
+            // 
+            // Quantité
+            // 
+            this.Quantité.HeaderText = "Quantité";
+            this.Quantité.Name = "Quantité";
+            this.Quantité.ReadOnly = true;
+            // 
+            // PrixT
+            // 
+            this.PrixT.HeaderText = "Prix total";
+            this.PrixT.Name = "PrixT";
+            this.PrixT.ReadOnly = true;
             // 
             // fv_basket
             // 
@@ -132,11 +132,10 @@
         private System.Windows.Forms.Button btn_order;
         private System.Windows.Forms.DataGridView dtg_basket;
         private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.Button btn_clear_basket;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrixU;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantité;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrixT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
-        private System.Windows.Forms.Button btn_clear_basket;
     }
 }

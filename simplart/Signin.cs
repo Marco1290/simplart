@@ -17,7 +17,7 @@ namespace simplart
         private fv_signup signup;
         public fv_signin()
         {
-            signup = new fv_signup();
+           
             InitializeComponent();
         }
 
@@ -28,7 +28,10 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            if(txt_username.TextLength < 1 || txt_password.TextLength < 1)
+            {
+                lbl_error_msg.Text = "Veuillez entrer un nom d'utilisateur et un mot de passe !";
+            }
 
             if (txt_username.Text.Equals("artiste"))
             {
@@ -45,6 +48,7 @@ namespace simplart
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            signup = new fv_signup();
             signup.ShowDialog();
       
         }

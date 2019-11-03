@@ -21,5 +21,10 @@ namespace simplart.ClientView
         {
 
         }
+
+        private void dtg_basket_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

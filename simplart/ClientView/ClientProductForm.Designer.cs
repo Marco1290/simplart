@@ -33,8 +33,9 @@
             this.rtxt_product_description = new System.Windows.Forms.RichTextBox();
             this.btn_addTo_basket = new System.Windows.Forms.Button();
             this.nud_quantity = new System.Windows.Forms.NumericUpDown();
-            this.pic_product = new System.Windows.Forms.PictureBox();
             this.lkl_return = new System.Windows.Forms.LinkLabel();
+            this.pic_product = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_product)).BeginInit();
             this.SuspendLayout();
@@ -46,9 +47,9 @@
             this.lbl_product_name.Location = new System.Drawing.Point(281, 71);
             this.lbl_product_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_product_name.Name = "lbl_product_name";
-            this.lbl_product_name.Size = new System.Drawing.Size(127, 20);
+            this.lbl_product_name.Size = new System.Drawing.Size(40, 20);
             this.lbl_product_name.TabIndex = 1;
-            this.lbl_product_name.Text = "Album Al Pacioni";
+            this.lbl_product_name.Text = "Test";
             // 
             // rtxt_product_description
             // 
@@ -65,7 +66,7 @@
             // 
             // btn_addTo_basket
             // 
-            this.btn_addTo_basket.Location = new System.Drawing.Point(512, 192);
+            this.btn_addTo_basket.Location = new System.Drawing.Point(487, 196);
             this.btn_addTo_basket.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addTo_basket.Name = "btn_addTo_basket";
             this.btn_addTo_basket.Size = new System.Drawing.Size(101, 24);
@@ -76,7 +77,7 @@
             // 
             // nud_quantity
             // 
-            this.nud_quantity.Location = new System.Drawing.Point(343, 192);
+            this.nud_quantity.Location = new System.Drawing.Point(363, 196);
             this.nud_quantity.Margin = new System.Windows.Forms.Padding(2);
             this.nud_quantity.Name = "nud_quantity";
             this.nud_quantity.Size = new System.Drawing.Size(31, 20);
@@ -86,6 +87,18 @@
             0,
             0,
             0});
+            // 
+            // lkl_return
+            // 
+            this.lkl_return.AutoSize = true;
+            this.lkl_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lkl_return.Location = new System.Drawing.Point(634, 335);
+            this.lkl_return.Name = "lkl_return";
+            this.lkl_return.Size = new System.Drawing.Size(58, 20);
+            this.lkl_return.TabIndex = 5;
+            this.lkl_return.TabStop = true;
+            this.lkl_return.Text = "Retour";
+            this.lkl_return.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkl_return_LinkClicked);
             // 
             // pic_product
             // 
@@ -98,22 +111,22 @@
             this.pic_product.TabIndex = 0;
             this.pic_product.TabStop = false;
             // 
-            // lkl_return
+            // label1
             // 
-            this.lkl_return.AutoSize = true;
-            this.lkl_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lkl_return.Location = new System.Drawing.Point(634, 335);
-            this.lkl_return.Name = "lkl_return";
-            this.lkl_return.Size = new System.Drawing.Size(58, 20);
-            this.lkl_return.TabIndex = 5;
-            this.lkl_return.TabStop = true;
-            this.lkl_return.Text = "Retour";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label1.Location = new System.Drawing.Point(288, 194);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "45.-";
             // 
             // fv_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 387);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lkl_return);
             this.Controls.Add(this.nud_quantity);
             this.Controls.Add(this.btn_addTo_basket);
@@ -139,5 +152,6 @@
         private System.Windows.Forms.Button btn_addTo_basket;
         private System.Windows.Forms.NumericUpDown nud_quantity;
         private System.Windows.Forms.LinkLabel lkl_return;
+        private System.Windows.Forms.Label label1;
     }
 }

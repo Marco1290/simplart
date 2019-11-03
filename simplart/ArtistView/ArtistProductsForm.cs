@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplart.ArtistView;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,12 @@ namespace simplart
         {
             fv_create_product createProduct = new fv_create_product();
             createProduct.ShowDialog();
+        }
+
+        private void btn_updProduct_Click(object sender, EventArgs e)
+        {
+            fv_artist_upd_product updateProduct = new fv_artist_upd_product();
+            updateProduct.ShowDialog();
         }
     }
 }

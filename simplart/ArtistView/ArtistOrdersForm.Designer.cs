@@ -31,65 +31,43 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_orders));
             this.lbl_title = new System.Windows.Forms.Label();
             this.dtg_orders = new System.Windows.Forms.DataGridView();
+            this.cbo_status = new System.Windows.Forms.ComboBox();
+            this.lbl_status = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbo_status = new System.Windows.Forms.ComboBox();
-            this.lbl_status = new System.Windows.Forms.Label();
+            this.btn_validate_orders = new System.Windows.Forms.Button();
+            this.btn_cancel_orders = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbl_title.Location = new System.Drawing.Point(455, 47);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(219, 31);
+            this.lbl_title.Size = new System.Drawing.Size(253, 39);
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "Mes commandes";
             this.lbl_title.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtg_orders
             // 
+            this.dtg_orders.AllowUserToAddRows = false;
+            this.dtg_orders.AllowUserToDeleteRows = false;
             this.dtg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Articles,
             this.statut,
-            this.prix,
-            this.action});
-            this.dtg_orders.Location = new System.Drawing.Point(145, 211);
+            this.prix});
+            this.dtg_orders.Location = new System.Drawing.Point(145, 198);
             this.dtg_orders.Name = "dtg_orders";
+            this.dtg_orders.ReadOnly = true;
             this.dtg_orders.Size = new System.Drawing.Size(790, 271);
             this.dtg_orders.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Articles
-            // 
-            this.Articles.HeaderText = "Articles";
-            this.Articles.Name = "Articles";
-            // 
-            // statut
-            // 
-            this.statut.HeaderText = "Statut";
-            this.statut.Name = "statut";
-            // 
-            // prix
-            // 
-            this.prix.HeaderText = "Prix total";
-            this.prix.Name = "prix";
-            // 
-            // action
-            // 
-            this.action.HeaderText = "Action";
-            this.action.Name = "action";
             // 
             // cbo_status
             // 
@@ -112,11 +90,55 @@
             this.lbl_status.TabIndex = 3;
             this.lbl_status.Text = "Statut";
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Articles
+            // 
+            this.Articles.HeaderText = "Articles";
+            this.Articles.Name = "Articles";
+            this.Articles.ReadOnly = true;
+            // 
+            // statut
+            // 
+            this.statut.HeaderText = "Statut";
+            this.statut.Name = "statut";
+            this.statut.ReadOnly = true;
+            // 
+            // prix
+            // 
+            this.prix.HeaderText = "Prix total";
+            this.prix.Name = "prix";
+            this.prix.ReadOnly = true;
+            // 
+            // btn_validate_orders
+            // 
+            this.btn_validate_orders.Location = new System.Drawing.Point(145, 519);
+            this.btn_validate_orders.Name = "btn_validate_orders";
+            this.btn_validate_orders.Size = new System.Drawing.Size(75, 23);
+            this.btn_validate_orders.TabIndex = 4;
+            this.btn_validate_orders.Text = "Valider";
+            this.btn_validate_orders.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancel_orders
+            // 
+            this.btn_cancel_orders.Location = new System.Drawing.Point(860, 519);
+            this.btn_cancel_orders.Name = "btn_cancel_orders";
+            this.btn_cancel_orders.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancel_orders.TabIndex = 4;
+            this.btn_cancel_orders.Text = "Annuler ";
+            this.btn_cancel_orders.UseVisualStyleBackColor = true;
+            // 
             // fv_orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 590);
+            this.Controls.Add(this.btn_cancel_orders);
+            this.Controls.Add(this.btn_validate_orders);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.cbo_status);
             this.Controls.Add(this.dtg_orders);
@@ -134,12 +156,13 @@
 
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.DataGridView dtg_orders;
+        private System.Windows.Forms.ComboBox cbo_status;
+        private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articles;
         private System.Windows.Forms.DataGridViewTextBoxColumn statut;
         private System.Windows.Forms.DataGridViewTextBoxColumn prix;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
-        private System.Windows.Forms.ComboBox cbo_status;
-        private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.Button btn_validate_orders;
+        private System.Windows.Forms.Button btn_cancel_orders;
     }
 }

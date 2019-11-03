@@ -66,10 +66,10 @@
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbl_title.Location = new System.Drawing.Point(398, 47);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(185, 29);
+            this.lbl_title.Size = new System.Drawing.Size(250, 39);
             this.lbl_title.TabIndex = 2;
             this.lbl_title.Text = "Mes statistiques";
             // 

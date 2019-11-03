@@ -42,6 +42,7 @@
             this.lkl_return = new System.Windows.Forms.LinkLabel();
             this.cbo_type = new System.Windows.Forms.ComboBox();
             this.lbl_type = new System.Windows.Forms.Label();
+            this.lbl_error_msg = new System.Windows.Forms.Label();
             btn_signup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_age)).BeginInit();
@@ -51,17 +52,18 @@
             // 
             btn_signup.BackColor = System.Drawing.Color.SlateGray;
             btn_signup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btn_signup.Location = new System.Drawing.Point(308, 372);
+            btn_signup.Location = new System.Drawing.Point(308, 403);
             btn_signup.Name = "btn_signup";
             btn_signup.Size = new System.Drawing.Size(148, 27);
             btn_signup.TabIndex = 12;
             btn_signup.Text = "S\'inscrire";
             btn_signup.UseVisualStyleBackColor = false;
+            btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(305, 226);
+            this.lbl_password.Location = new System.Drawing.Point(305, 257);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(71, 13);
             this.lbl_password.TabIndex = 11;
@@ -70,7 +72,7 @@
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(305, 184);
+            this.lbl_username.Location = new System.Drawing.Point(305, 215);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(84, 13);
             this.lbl_username.TabIndex = 10;
@@ -78,14 +80,14 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(308, 242);
+            this.txt_password.Location = new System.Drawing.Point(308, 273);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(148, 20);
             this.txt_password.TabIndex = 8;
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(308, 200);
+            this.txt_username.Location = new System.Drawing.Point(308, 231);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(148, 20);
             this.txt_username.TabIndex = 7;
@@ -102,7 +104,7 @@
             // 
             // nud_age
             // 
-            this.nud_age.Location = new System.Drawing.Point(308, 287);
+            this.nud_age.Location = new System.Drawing.Point(308, 318);
             this.nud_age.Minimum = new decimal(new int[] {
             10,
             0,
@@ -120,7 +122,7 @@
             // lbl_age
             // 
             this.lbl_age.AutoSize = true;
-            this.lbl_age.Location = new System.Drawing.Point(305, 271);
+            this.lbl_age.Location = new System.Drawing.Point(305, 302);
             this.lbl_age.Name = "lbl_age";
             this.lbl_age.Size = new System.Drawing.Size(26, 13);
             this.lbl_age.TabIndex = 14;
@@ -129,7 +131,7 @@
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(305, 136);
+            this.lbl_email.Location = new System.Drawing.Point(305, 167);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(32, 13);
             this.lbl_email.TabIndex = 16;
@@ -137,7 +139,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(308, 152);
+            this.txt_email.Location = new System.Drawing.Point(308, 183);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(148, 20);
             this.txt_email.TabIndex = 15;
@@ -146,7 +148,7 @@
             // 
             this.lkl_return.AutoSize = true;
             this.lkl_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkl_return.Location = new System.Drawing.Point(351, 402);
+            this.lkl_return.Location = new System.Drawing.Point(351, 433);
             this.lkl_return.Name = "lkl_return";
             this.lkl_return.Size = new System.Drawing.Size(58, 20);
             this.lkl_return.TabIndex = 17;
@@ -161,7 +163,7 @@
             this.cbo_type.Items.AddRange(new object[] {
             "Client",
             "Artiste"});
-            this.cbo_type.Location = new System.Drawing.Point(308, 336);
+            this.cbo_type.Location = new System.Drawing.Point(308, 367);
             this.cbo_type.Name = "cbo_type";
             this.cbo_type.Size = new System.Drawing.Size(148, 21);
             this.cbo_type.TabIndex = 19;
@@ -169,17 +171,28 @@
             // lbl_type
             // 
             this.lbl_type.AutoSize = true;
-            this.lbl_type.Location = new System.Drawing.Point(305, 320);
+            this.lbl_type.Location = new System.Drawing.Point(305, 351);
             this.lbl_type.Name = "lbl_type";
             this.lbl_type.Size = new System.Drawing.Size(86, 13);
             this.lbl_type.TabIndex = 20;
             this.lbl_type.Text = "Type d\'utilisateur";
             // 
+            // lbl_error_msg
+            // 
+            this.lbl_error_msg.AutoSize = true;
+            this.lbl_error_msg.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_error_msg.Location = new System.Drawing.Point(356, 146);
+            this.lbl_error_msg.Name = "lbl_error_msg";
+            this.lbl_error_msg.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_error_msg.Size = new System.Drawing.Size(0, 13);
+            this.lbl_error_msg.TabIndex = 21;
+            // 
             // fv_signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 444);
+            this.ClientSize = new System.Drawing.Size(800, 566);
+            this.Controls.Add(this.lbl_error_msg);
             this.Controls.Add(this.lbl_type);
             this.Controls.Add(this.cbo_type);
             this.Controls.Add(this.lkl_return);
@@ -217,5 +230,6 @@
         private System.Windows.Forms.LinkLabel lkl_return;
         private System.Windows.Forms.ComboBox cbo_type;
         private System.Windows.Forms.Label lbl_type;
+        private System.Windows.Forms.Label lbl_error_msg;
     }
 }

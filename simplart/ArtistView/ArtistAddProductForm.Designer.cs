@@ -43,16 +43,17 @@
             this.txt_product_pic = new System.Windows.Forms.TextBox();
             this.cbo_category = new System.Windows.Forms.ComboBox();
             this.lbl_category = new System.Windows.Forms.Label();
+            this.btn_addProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txt_quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbl_title.Location = new System.Drawing.Point(269, 43);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(227, 31);
+            this.lbl_title.Size = new System.Drawing.Size(271, 39);
             this.lbl_title.TabIndex = 1;
             this.lbl_title.Text = "Ajouter un produit";
             // 
@@ -169,11 +170,21 @@
             this.lbl_category.TabIndex = 14;
             this.lbl_category.Text = "Catégorie";
             // 
+            // btn_addProduct
+            // 
+            this.btn_addProduct.Location = new System.Drawing.Point(562, 388);
+            this.btn_addProduct.Name = "btn_addProduct";
+            this.btn_addProduct.Size = new System.Drawing.Size(75, 23);
+            this.btn_addProduct.TabIndex = 15;
+            this.btn_addProduct.Text = "Enregistrer";
+            this.btn_addProduct.UseVisualStyleBackColor = true;
+            // 
             // fv_create_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_addProduct);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.cbo_category);
             this.Controls.Add(this.txt_product_pic);
@@ -213,5 +224,6 @@
         private System.Windows.Forms.TextBox txt_product_pic;
         private System.Windows.Forms.ComboBox cbo_category;
         private System.Windows.Forms.Label lbl_category;
+        private System.Windows.Forms.Button btn_addProduct;
     }
 }

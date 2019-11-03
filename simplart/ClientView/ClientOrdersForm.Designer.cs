@@ -30,56 +30,56 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_client_orders));
             this.dtg_orders = new System.Windows.Forms.DataGridView();
+            this.lbl_title = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).BeginInit();
             this.SuspendLayout();
             // 
             // dtg_orders
             // 
+            this.dtg_orders.AllowUserToAddRows = false;
+            this.dtg_orders.AllowUserToDeleteRows = false;
             this.dtg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Articles,
-            this.prix,
-            this.action});
+            this.prix});
             this.dtg_orders.Location = new System.Drawing.Point(289, 166);
             this.dtg_orders.Name = "dtg_orders";
+            this.dtg_orders.ReadOnly = true;
             this.dtg_orders.Size = new System.Drawing.Size(666, 350);
             this.dtg_orders.TabIndex = 3;
+            this.dtg_orders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_orders_CellContentClick);
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lbl_title.Location = new System.Drawing.Point(533, 78);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(177, 39);
+            this.lbl_title.TabIndex = 2;
+            this.lbl_title.Text = "Mes achats";
             // 
             // ID
             // 
-            this.ID.HeaderText = "ID";
+            this.ID.HeaderText = "Réference";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Articles
             // 
             this.Articles.HeaderText = "Articles";
             this.Articles.Name = "Articles";
+            this.Articles.ReadOnly = true;
             // 
             // prix
             // 
             this.prix.HeaderText = "Prix total";
             this.prix.Name = "prix";
-            // 
-            // action
-            // 
-            this.action.HeaderText = "Action";
-            this.action.Name = "action";
-            // 
-            // lbl_title
-            // 
-            this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(533, 78);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(153, 31);
-            this.lbl_title.TabIndex = 2;
-            this.lbl_title.Text = "Mes achats";
+            this.prix.ReadOnly = true;
             // 
             // fv_client_orders
             // 
@@ -100,10 +100,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtg_orders;
+        private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articles;
         private System.Windows.Forms.DataGridViewTextBoxColumn prix;
-        private System.Windows.Forms.DataGridViewTextBoxColumn action;
-        private System.Windows.Forms.Label lbl_title;
     }
 }

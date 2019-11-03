@@ -36,7 +36,7 @@ namespace simplart
 
             flp_articles_list.AutoScroll = true;
 
-            for (int i = 0; i < 10; ++i)
+            for (int i = 0; i < 50; ++i)
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
@@ -67,7 +67,7 @@ namespace simplart
                     control.Click += new EventHandler(produit_click);
                 }
                 flp_articles_list.Controls.Add(flowLayoutPanel);
-                picture.Image = simplart.Properties.Resources.logo;
+                picture.Image = simplart.Properties.Resources.bsi_toomt14;
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Refresh();
             }
@@ -160,6 +160,11 @@ namespace simplart
         {
             fv_client_orders client_Orders = new fv_client_orders();
             client_Orders.Show();
+        }
+
+        private void pic_search_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

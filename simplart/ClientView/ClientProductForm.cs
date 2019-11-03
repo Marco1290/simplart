@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplart.ClientView;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,15 @@ namespace simplart
 
         private void button1_Click(object sender, EventArgs e)
         {
+            fv_basket fv_Basket = new fv_basket();
+            Dispose();
+            fv_Basket.ShowDialog();
+            
+        }
 
+        private void lkl_return_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dispose();
         }
     }
 }

@@ -25,8 +25,18 @@ namespace simplart
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
          
-            Hide();
+            Dispose();
 
+        }
+
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            lbl_error_msg.Text = "";
+
+            if (txt_email.TextLength < 1 || txt_password.TextLength < 1 || txt_username.TextLength < 1 )
+            {
+                lbl_error_msg.Text = "Tous les champs sont obligatoires !";
+            }
         }
     }
 }
