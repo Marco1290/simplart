@@ -41,8 +41,9 @@
             // 
             // pnl_charts
             // 
+            this.pnl_charts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnl_charts.Controls.Add(this.cht_nbventes);
-            this.pnl_charts.Location = new System.Drawing.Point(172, 122);
+            this.pnl_charts.Location = new System.Drawing.Point(113, 132);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(711, 330);
             this.pnl_charts.TabIndex = 1;
@@ -65,9 +66,10 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(398, 47);
+            this.lbl_title.Location = new System.Drawing.Point(339, 47);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(250, 39);
             this.lbl_title.TabIndex = 2;
@@ -77,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 551);
+            this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pnl_charts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

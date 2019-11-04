@@ -52,20 +52,28 @@
             // 
             // txt_search
             // 
-            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.Location = new System.Drawing.Point(717, 126);
+            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(803, 149);
             this.txt_search.Margin = new System.Windows.Forms.Padding(2);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(478, 26);
+            this.txt_search.Size = new System.Drawing.Size(652, 26);
             this.txt_search.TabIndex = 0;
+            this.txt_search.TabStop = false;
+            this.txt_search.Text = "domaines,genres,artistes,titres, ...";
+            this.txt_search.Enter += new System.EventHandler(this.RemoveText);
+            this.txt_search.Leave += new System.EventHandler(this.AddText);
             // 
             // flp_articles_list
             // 
-            this.flp_articles_list.Location = new System.Drawing.Point(92, 156);
+            this.flp_articles_list.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flp_articles_list.BackColor = System.Drawing.Color.SlateGray;
+            this.flp_articles_list.Location = new System.Drawing.Point(76, 198);
             this.flp_articles_list.Margin = new System.Windows.Forms.Padding(2);
             this.flp_articles_list.Name = "flp_articles_list";
-            this.flp_articles_list.Size = new System.Drawing.Size(1139, 399);
+            this.flp_articles_list.Size = new System.Drawing.Size(1431, 600);
             this.flp_articles_list.TabIndex = 4;
+            this.flp_articles_list.TabStop = true;
             this.flp_articles_list.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // mns_primary
@@ -78,7 +86,7 @@
             this.seDéconnecterToolStripMenuItem});
             this.mns_primary.Location = new System.Drawing.Point(0, 0);
             this.mns_primary.Name = "mns_primary";
-            this.mns_primary.Size = new System.Drawing.Size(1311, 24);
+            this.mns_primary.Size = new System.Drawing.Size(1526, 24);
             this.mns_primary.TabIndex = 5;
             this.mns_primary.Text = "menuStrip1";
             // 
@@ -148,18 +156,20 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(560, 53);
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lbl_title.Location = new System.Drawing.Point(711, 54);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(138, 39);
+            this.lbl_title.Size = new System.Drawing.Size(170, 48);
             this.lbl_title.TabIndex = 7;
             this.lbl_title.Text = "Simplart";
             // 
             // pic_search
             // 
+            this.pic_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pic_search.Image = global::simplart.Properties.Resources.icons8_search_512;
-            this.pic_search.Location = new System.Drawing.Point(1200, 126);
+            this.pic_search.Location = new System.Drawing.Point(1476, 149);
             this.pic_search.Name = "pic_search";
             this.pic_search.Size = new System.Drawing.Size(31, 26);
             this.pic_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,10 +179,11 @@
             // 
             // pic_logo
             // 
+            this.pic_logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pic_logo.Image = global::simplart.Properties.Resources.logo;
-            this.pic_logo.Location = new System.Drawing.Point(1260, 37);
+            this.pic_logo.Location = new System.Drawing.Point(1417, 38);
             this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(39, 41);
+            this.pic_logo.Size = new System.Drawing.Size(90, 83);
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_logo.TabIndex = 8;
             this.pic_logo.TabStop = false;
@@ -182,7 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1311, 603);
+            this.ClientSize = new System.Drawing.Size(1526, 881);
             this.Controls.Add(this.pic_search);
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.lbl_title);
@@ -194,6 +205,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Simplart";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.mns_primary.ResumeLayout(false);
             this.mns_primary.PerformLayout();

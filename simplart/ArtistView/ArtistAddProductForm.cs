@@ -32,5 +32,17 @@ namespace simplart
         {
 
         }
+
+        private void btn_addProduct_Click(object sender, EventArgs e)
+        {
+            if(txt_name.TextLength< 1  ||txt_price.TextLength < 1)
+            {
+                lbl_error_msg.Text = "Le prix et le nom du produit sont obligatoires !";
+            }
+            if (rtxt_description.TextLength < 20)
+            {
+                lbl_error_msg.Text += "\n Il faut un description de 20 caractères minimum !";
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_signin));
             this.txt_username = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.lbl_username = new System.Windows.Forms.Label();
@@ -41,24 +42,26 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(299, 188);
+            this.txt_username.Location = new System.Drawing.Point(274, 193);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(148, 20);
             this.txt_username.TabIndex = 0;
             this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
+            this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(299, 232);
+            this.txt_password.Location = new System.Drawing.Point(274, 232);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(148, 20);
             this.txt_password.TabIndex = 1;
             this.txt_password.UseSystemPasswordChar = true;
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(296, 172);
+            this.lbl_username.Location = new System.Drawing.Point(271, 172);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(84, 13);
             this.lbl_username.TabIndex = 3;
@@ -68,7 +71,7 @@
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(296, 216);
+            this.lbl_password.Location = new System.Drawing.Point(271, 216);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(71, 13);
             this.lbl_password.TabIndex = 4;
@@ -78,7 +81,7 @@
             // 
             this.btn_signin.BackColor = System.Drawing.Color.SlateGray;
             this.btn_signin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_signin.Location = new System.Drawing.Point(299, 272);
+            this.btn_signin.Location = new System.Drawing.Point(274, 272);
             this.btn_signin.Name = "btn_signin";
             this.btn_signin.Size = new System.Drawing.Size(148, 31);
             this.btn_signin.TabIndex = 6;
@@ -89,7 +92,7 @@
             // pic_logo
             // 
             this.pic_logo.Image = global::simplart.Properties.Resources.logo;
-            this.pic_logo.Location = new System.Drawing.Point(299, 12);
+            this.pic_logo.Location = new System.Drawing.Point(274, 12);
             this.pic_logo.Name = "pic_logo";
             this.pic_logo.Size = new System.Drawing.Size(148, 119);
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -100,7 +103,7 @@
             // 
             this.lkl_signup.AutoSize = true;
             this.lkl_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkl_signup.Location = new System.Drawing.Point(323, 324);
+            this.lkl_signup.Location = new System.Drawing.Point(298, 324);
             this.lkl_signup.Name = "lkl_signup";
             this.lkl_signup.Size = new System.Drawing.Size(86, 20);
             this.lkl_signup.TabIndex = 7;
@@ -112,7 +115,7 @@
             // 
             this.lbl_error_msg.AutoSize = true;
             this.lbl_error_msg.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbl_error_msg.Location = new System.Drawing.Point(356, 145);
+            this.lbl_error_msg.Location = new System.Drawing.Point(331, 145);
             this.lbl_error_msg.Name = "lbl_error_msg";
             this.lbl_error_msg.Size = new System.Drawing.Size(0, 13);
             this.lbl_error_msg.TabIndex = 8;
@@ -121,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 377);
+            this.ClientSize = new System.Drawing.Size(684, 361);
             this.Controls.Add(this.lbl_error_msg);
             this.Controls.Add(this.lkl_signup);
             this.Controls.Add(this.btn_signin);
@@ -130,6 +133,7 @@
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fv_signin";
             this.Text = "Sign in";
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();

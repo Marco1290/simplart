@@ -50,8 +50,9 @@
             // 
             // lbl_category
             // 
+            this.lbl_category.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(532, 162);
+            this.lbl_category.Location = new System.Drawing.Point(599, 162);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(52, 13);
             this.lbl_category.TabIndex = 28;
@@ -59,27 +60,30 @@
             // 
             // cbo_category
             // 
+            this.cbo_category.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbo_category.FormattingEnabled = true;
             this.cbo_category.Items.AddRange(new object[] {
             "Musique",
             "Film",
             "Sculpture"});
-            this.cbo_category.Location = new System.Drawing.Point(535, 190);
+            this.cbo_category.Location = new System.Drawing.Point(602, 190);
             this.cbo_category.Name = "cbo_category";
             this.cbo_category.Size = new System.Drawing.Size(121, 21);
             this.cbo_category.TabIndex = 27;
             // 
             // txt_product_pic
             // 
+            this.txt_product_pic.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_product_pic.Enabled = false;
-            this.txt_product_pic.Location = new System.Drawing.Point(409, 287);
+            this.txt_product_pic.Location = new System.Drawing.Point(476, 287);
             this.txt_product_pic.Name = "txt_product_pic";
             this.txt_product_pic.Size = new System.Drawing.Size(100, 20);
             this.txt_product_pic.TabIndex = 26;
             // 
             // btn_product_pic
             // 
-            this.btn_product_pic.Location = new System.Drawing.Point(409, 313);
+            this.btn_product_pic.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_product_pic.Location = new System.Drawing.Point(476, 313);
             this.btn_product_pic.Name = "btn_product_pic";
             this.btn_product_pic.Size = new System.Drawing.Size(75, 23);
             this.btn_product_pic.TabIndex = 25;
@@ -88,7 +92,8 @@
             // 
             // rtxt_description
             // 
-            this.rtxt_description.Location = new System.Drawing.Point(147, 287);
+            this.rtxt_description.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rtxt_description.Location = new System.Drawing.Point(214, 287);
             this.rtxt_description.Name = "rtxt_description";
             this.rtxt_description.Size = new System.Drawing.Size(192, 96);
             this.rtxt_description.TabIndex = 24;
@@ -96,29 +101,33 @@
             // 
             // txt_price
             // 
-            this.txt_price.Location = new System.Drawing.Point(391, 189);
+            this.txt_price.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_price.Location = new System.Drawing.Point(458, 189);
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(100, 20);
             this.txt_price.TabIndex = 23;
             // 
             // txt_quantity
             // 
-            this.txt_quantity.Location = new System.Drawing.Point(276, 190);
+            this.txt_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_quantity.Location = new System.Drawing.Point(343, 190);
             this.txt_quantity.Name = "txt_quantity";
             this.txt_quantity.Size = new System.Drawing.Size(50, 20);
             this.txt_quantity.TabIndex = 22;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(147, 190);
+            this.txt_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_name.Location = new System.Drawing.Point(214, 190);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(100, 20);
             this.txt_name.TabIndex = 21;
             // 
             // lbl_product_pic
             // 
+            this.lbl_product_pic.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_product_pic.AutoSize = true;
-            this.lbl_product_pic.Location = new System.Drawing.Point(406, 258);
+            this.lbl_product_pic.Location = new System.Drawing.Point(473, 258);
             this.lbl_product_pic.Name = "lbl_product_pic";
             this.lbl_product_pic.Size = new System.Drawing.Size(85, 13);
             this.lbl_product_pic.TabIndex = 20;
@@ -126,8 +135,9 @@
             // 
             // lbl_description
             // 
+            this.lbl_description.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Location = new System.Drawing.Point(147, 258);
+            this.lbl_description.Location = new System.Drawing.Point(214, 258);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(58, 13);
             this.lbl_description.TabIndex = 19;
@@ -135,8 +145,9 @@
             // 
             // lbl_price
             // 
+            this.lbl_price.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_price.AutoSize = true;
-            this.lbl_price.Location = new System.Drawing.Point(388, 162);
+            this.lbl_price.Location = new System.Drawing.Point(455, 162);
             this.lbl_price.Name = "lbl_price";
             this.lbl_price.Size = new System.Drawing.Size(24, 13);
             this.lbl_price.TabIndex = 18;
@@ -144,8 +155,9 @@
             // 
             // lbl_quantity
             // 
+            this.lbl_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_quantity.AutoSize = true;
-            this.lbl_quantity.Location = new System.Drawing.Point(273, 162);
+            this.lbl_quantity.Location = new System.Drawing.Point(340, 162);
             this.lbl_quantity.Name = "lbl_quantity";
             this.lbl_quantity.Size = new System.Drawing.Size(47, 13);
             this.lbl_quantity.TabIndex = 17;
@@ -153,8 +165,9 @@
             // 
             // lbl_name
             // 
+            this.lbl_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(144, 162);
+            this.lbl_name.Location = new System.Drawing.Point(211, 162);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(79, 13);
             this.lbl_name.TabIndex = 16;
@@ -162,9 +175,10 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(183, 68);
+            this.lbl_title.Location = new System.Drawing.Point(250, 68);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(340, 39);
             this.lbl_title.TabIndex = 15;
@@ -173,9 +187,10 @@
             // 
             // lbl_prod_num
             // 
+            this.lbl_prod_num.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_prod_num.AutoSize = true;
             this.lbl_prod_num.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_prod_num.Location = new System.Drawing.Point(529, 68);
+            this.lbl_prod_num.Location = new System.Drawing.Point(596, 68);
             this.lbl_prod_num.Name = "lbl_prod_num";
             this.lbl_prod_num.Size = new System.Drawing.Size(27, 39);
             this.lbl_prod_num.TabIndex = 29;
@@ -183,7 +198,8 @@
             // 
             // btn_updProduct
             // 
-            this.btn_updProduct.Location = new System.Drawing.Point(535, 402);
+            this.btn_updProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_updProduct.Location = new System.Drawing.Point(602, 402);
             this.btn_updProduct.Name = "btn_updProduct";
             this.btn_updProduct.Size = new System.Drawing.Size(75, 23);
             this.btn_updProduct.TabIndex = 30;
@@ -194,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.btn_updProduct);
             this.Controls.Add(this.lbl_prod_num);
             this.Controls.Add(this.lbl_category);

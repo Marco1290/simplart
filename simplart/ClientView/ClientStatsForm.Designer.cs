@@ -41,9 +41,10 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(516, 84);
+            this.lbl_title.Location = new System.Drawing.Point(342, 51);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(250, 39);
             this.lbl_title.TabIndex = 4;
@@ -51,8 +52,9 @@
             // 
             // pnl_charts
             // 
+            this.pnl_charts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnl_charts.Controls.Add(this.cht_nbventes);
-            this.pnl_charts.Location = new System.Drawing.Point(285, 194);
+            this.pnl_charts.Location = new System.Drawing.Point(111, 138);
             this.pnl_charts.Name = "pnl_charts";
             this.pnl_charts.Size = new System.Drawing.Size(711, 330);
             this.pnl_charts.TabIndex = 3;
@@ -63,7 +65,7 @@
             this.cht_nbventes.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.cht_nbventes.Legends.Add(legend1);
-            this.cht_nbventes.Location = new System.Drawing.Point(180, 15);
+            this.cht_nbventes.Location = new System.Drawing.Point(157, 14);
             this.cht_nbventes.Name = "cht_nbventes";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -77,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 838);
+            this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pnl_charts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -42,7 +42,8 @@
             // 
             // btn_order
             // 
-            this.btn_order.Location = new System.Drawing.Point(439, 547);
+            this.btn_order.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_order.Location = new System.Drawing.Point(353, 547);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(116, 33);
             this.btn_order.TabIndex = 5;
@@ -52,13 +53,14 @@
             // dtg_basket
             // 
             this.dtg_basket.AllowUserToAddRows = false;
+            this.dtg_basket.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtg_basket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_basket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nom,
             this.PrixU,
             this.Quantité,
             this.PrixT});
-            this.dtg_basket.Location = new System.Drawing.Point(251, 136);
+            this.dtg_basket.Location = new System.Drawing.Point(165, 136);
             this.dtg_basket.Name = "dtg_basket";
             this.dtg_basket.ReadOnly = true;
             this.dtg_basket.Size = new System.Drawing.Size(730, 351);
@@ -67,9 +69,10 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(530, 45);
+            this.lbl_title.Location = new System.Drawing.Point(444, 45);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(174, 39);
             this.lbl_title.TabIndex = 3;
@@ -78,7 +81,8 @@
             // 
             // btn_clear_basket
             // 
-            this.btn_clear_basket.Location = new System.Drawing.Point(740, 547);
+            this.btn_clear_basket.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_clear_basket.Location = new System.Drawing.Point(654, 547);
             this.btn_clear_basket.Name = "btn_clear_basket";
             this.btn_clear_basket.Size = new System.Drawing.Size(107, 33);
             this.btn_clear_basket.TabIndex = 6;
@@ -113,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 698);
+            this.ClientSize = new System.Drawing.Size(1084, 611);
             this.Controls.Add(this.btn_clear_basket);
             this.Controls.Add(this.btn_order);
             this.Controls.Add(this.dtg_basket);

@@ -15,6 +15,7 @@ namespace simplart
     {
         private Main main;
         private fv_signup signup;
+        private int focus_index = 0; 
         public fv_signin()
         {
            
@@ -28,7 +29,26 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(txt_username.TextLength < 1 || txt_password.TextLength < 1)
+            login();
+        }
+
+
+
+        private void textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
+
+            
+        }
+
+
+        private void login()
+        {
+            if (txt_username.TextLength < 1 || txt_password.TextLength < 1)
             {
                 lbl_error_msg.Text = "Veuillez entrer un nom d'utilisateur et un mot de passe !";
             }
@@ -45,7 +65,6 @@ namespace simplart
             main.Show();
             Hide();
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             signup = new fv_signup();

@@ -33,18 +33,21 @@
             this.rtxt_product_description = new System.Windows.Forms.RichTextBox();
             this.btn_addTo_basket = new System.Windows.Forms.Button();
             this.nud_quantity = new System.Windows.Forms.NumericUpDown();
-            this.lkl_return = new System.Windows.Forms.LinkLabel();
             this.pic_product = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.lbl_quantity = new System.Windows.Forms.Label();
+            this.lbl_description = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_product)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_product_name
             // 
+            this.lbl_product_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_product_name.AutoSize = true;
             this.lbl_product_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_product_name.Location = new System.Drawing.Point(281, 71);
+            this.lbl_product_name.Location = new System.Drawing.Point(547, 84);
             this.lbl_product_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_product_name.Name = "lbl_product_name";
             this.lbl_product_name.Size = new System.Drawing.Size(40, 20);
@@ -53,8 +56,9 @@
             // 
             // rtxt_product_description
             // 
+            this.rtxt_product_description.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rtxt_product_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxt_product_description.Location = new System.Drawing.Point(285, 109);
+            this.rtxt_product_description.Location = new System.Drawing.Point(362, 156);
             this.rtxt_product_description.Margin = new System.Windows.Forms.Padding(2);
             this.rtxt_product_description.Name = "rtxt_product_description";
             this.rtxt_product_description.ReadOnly = true;
@@ -66,7 +70,8 @@
             // 
             // btn_addTo_basket
             // 
-            this.btn_addTo_basket.Location = new System.Drawing.Point(487, 196);
+            this.btn_addTo_basket.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_addTo_basket.Location = new System.Drawing.Point(668, 299);
             this.btn_addTo_basket.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addTo_basket.Name = "btn_addTo_basket";
             this.btn_addTo_basket.Size = new System.Drawing.Size(101, 24);
@@ -77,10 +82,11 @@
             // 
             // nud_quantity
             // 
-            this.nud_quantity.Location = new System.Drawing.Point(363, 196);
+            this.nud_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nud_quantity.Location = new System.Drawing.Point(506, 303);
             this.nud_quantity.Margin = new System.Windows.Forms.Padding(2);
             this.nud_quantity.Name = "nud_quantity";
-            this.nud_quantity.Size = new System.Drawing.Size(31, 20);
+            this.nud_quantity.Size = new System.Drawing.Size(52, 20);
             this.nud_quantity.TabIndex = 4;
             this.nud_quantity.Value = new decimal(new int[] {
             1,
@@ -88,22 +94,11 @@
             0,
             0});
             // 
-            // lkl_return
-            // 
-            this.lkl_return.AutoSize = true;
-            this.lkl_return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lkl_return.Location = new System.Drawing.Point(634, 335);
-            this.lkl_return.Name = "lkl_return";
-            this.lkl_return.Size = new System.Drawing.Size(58, 20);
-            this.lkl_return.TabIndex = 5;
-            this.lkl_return.TabStop = true;
-            this.lkl_return.Text = "Retour";
-            this.lkl_return.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkl_return_LinkClicked);
-            // 
             // pic_product
             // 
+            this.pic_product.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pic_product.Image = global::simplart.Properties.Resources.bsi_toomt14;
-            this.pic_product.Location = new System.Drawing.Point(77, 71);
+            this.pic_product.Location = new System.Drawing.Point(76, 156);
             this.pic_product.Margin = new System.Windows.Forms.Padding(2);
             this.pic_product.Name = "pic_product";
             this.pic_product.Size = new System.Drawing.Size(163, 167);
@@ -113,21 +108,54 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(288, 194);
+            this.label1.Location = new System.Drawing.Point(359, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "45.-";
             // 
+            // lbl_price
+            // 
+            this.lbl_price.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Location = new System.Drawing.Point(357, 276);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(24, 13);
+            this.lbl_price.TabIndex = 7;
+            this.lbl_price.Text = "Prix";
+            // 
+            // lbl_quantity
+            // 
+            this.lbl_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_quantity.AutoSize = true;
+            this.lbl_quantity.Location = new System.Drawing.Point(503, 276);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(47, 13);
+            this.lbl_quantity.TabIndex = 8;
+            this.lbl_quantity.Text = "Quantité";
+            // 
+            // lbl_description
+            // 
+            this.lbl_description.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_description.AutoSize = true;
+            this.lbl_description.Location = new System.Drawing.Point(362, 130);
+            this.lbl_description.Name = "lbl_description";
+            this.lbl_description.Size = new System.Drawing.Size(60, 13);
+            this.lbl_description.TabIndex = 9;
+            this.lbl_description.Text = "Description";
+            // 
             // fv_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 387);
+            this.ClientSize = new System.Drawing.Size(934, 511);
+            this.Controls.Add(this.lbl_description);
+            this.Controls.Add(this.lbl_quantity);
+            this.Controls.Add(this.lbl_price);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lkl_return);
             this.Controls.Add(this.nud_quantity);
             this.Controls.Add(this.btn_addTo_basket);
             this.Controls.Add(this.rtxt_product_description);
@@ -151,7 +179,9 @@
         private System.Windows.Forms.RichTextBox rtxt_product_description;
         private System.Windows.Forms.Button btn_addTo_basket;
         private System.Windows.Forms.NumericUpDown nud_quantity;
-        private System.Windows.Forms.LinkLabel lkl_return;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_price;
+        private System.Windows.Forms.Label lbl_quantity;
+        private System.Windows.Forms.Label lbl_description;
     }
 }

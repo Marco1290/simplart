@@ -54,6 +54,12 @@
     <Compile Include="ArtistView\ArtistAddProductForm.Designer.cs">
       <DependentUpon>ArtistAddProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArtistView\ArtistOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtistView\ArtistOrderDetail.Designer.cs">
+      <DependentUpon>ArtistOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArtistView\ArtistOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="ArtistView\ArtistAddProductForm.resx">
       <DependentUpon>ArtistAddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistView\ArtistOrderDetail.resx">
+      <DependentUpon>ArtistOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ArtistView\ArtistOrdersForm.resx">
       <DependentUpon>ArtistOrdersForm.cs</DependentUpon>

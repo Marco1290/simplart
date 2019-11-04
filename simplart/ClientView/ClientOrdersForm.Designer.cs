@@ -41,12 +41,13 @@
             // 
             this.dtg_orders.AllowUserToAddRows = false;
             this.dtg_orders.AllowUserToDeleteRows = false;
+            this.dtg_orders.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Articles,
             this.prix});
-            this.dtg_orders.Location = new System.Drawing.Point(289, 166);
+            this.dtg_orders.Location = new System.Drawing.Point(209, 150);
             this.dtg_orders.Name = "dtg_orders";
             this.dtg_orders.ReadOnly = true;
             this.dtg_orders.Size = new System.Drawing.Size(666, 350);
@@ -55,9 +56,10 @@
             // 
             // lbl_title
             // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(533, 78);
+            this.lbl_title.Location = new System.Drawing.Point(453, 62);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(177, 39);
             this.lbl_title.TabIndex = 2;
@@ -85,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 702);
+            this.ClientSize = new System.Drawing.Size(1084, 611);
             this.Controls.Add(this.dtg_orders);
             this.Controls.Add(this.lbl_title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

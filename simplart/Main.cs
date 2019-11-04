@@ -29,8 +29,24 @@ namespace simplart
             {
                 artistesToolStripMenuItem.Visible = false;
             }
+            
         }
+       
 
+    public void RemoveText(object sender, EventArgs e)
+            {
+                if (txt_search.Text == "domaines,genres,artistes,titres, ...")
+                {
+                    txt_search.Text = "";
+                  
+                }
+            }
+
+        public void AddText(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_search.Text))
+                txt_search.Text = "domaines,genres,artistes,titres, ...";
+        }
         private void Main_Load(object sender, EventArgs e)
         {
 
