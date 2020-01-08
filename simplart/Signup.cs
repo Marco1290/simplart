@@ -37,6 +37,20 @@ namespace simplart
             {
                 lbl_error_msg.Text = "Tous les champs sont obligatoires !";
             }
+
+            // Create a new row.
+            SlaDataSet.SLA_USERSRow usersRow;
+            usersRow = SlaDataSet.SLA_USERS.NewSLA_USERSRow();
+
+
+            newRegionRow.RegionID = 5;
+            newRegionRow.RegionDescription = "NorthWestern";
+
+            // Add the row to the Region table
+            this.northwindDataSet.Region.Rows.Add(newRegionRow);
+
+            // Save the new row to the database
+            this.regionTableAdapter.Update(this.northwindDataSet.Region);
         }
     }
 }
