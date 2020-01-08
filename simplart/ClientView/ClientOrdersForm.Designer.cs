@@ -28,13 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_client_orders));
             this.dtg_orders = new System.Windows.Forms.DataGridView();
-            this.lbl_title = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Articles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_title = new System.Windows.Forms.Label();
+            this.slaDataSet = new simplart.SlaDataSet();
+            this.slaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLAPRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLA_PRODUCTSTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLAPRODUCTSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtg_orders
@@ -54,17 +62,6 @@
             this.dtg_orders.TabIndex = 3;
             this.dtg_orders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_orders_CellContentClick);
             // 
-            // lbl_title
-            // 
-            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_title.AutoSize = true;
-            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_title.Location = new System.Drawing.Point(453, 62);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(177, 39);
-            this.lbl_title.TabIndex = 2;
-            this.lbl_title.Text = "Mes achats";
-            // 
             // ID
             // 
             this.ID.HeaderText = "Réference";
@@ -83,6 +80,36 @@
             this.prix.Name = "prix";
             this.prix.ReadOnly = true;
             // 
+            // lbl_title
+            // 
+            this.lbl_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Impact", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lbl_title.Location = new System.Drawing.Point(453, 62);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(177, 39);
+            this.lbl_title.TabIndex = 2;
+            this.lbl_title.Text = "Mes achats";
+            // 
+            // slaDataSet
+            // 
+            this.slaDataSet.DataSetName = "SlaDataSet";
+            this.slaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // slaDataSetBindingSource
+            // 
+            this.slaDataSetBindingSource.DataSource = this.slaDataSet;
+            this.slaDataSetBindingSource.Position = 0;
+            // 
+            // sLAPRODUCTSBindingSource
+            // 
+            this.sLAPRODUCTSBindingSource.DataMember = "SLA_PRODUCTS";
+            this.sLAPRODUCTSBindingSource.DataSource = this.slaDataSetBindingSource;
+            // 
+            // sLA_PRODUCTSTableAdapter
+            // 
+            this.sLA_PRODUCTSTableAdapter.ClearBeforeFill = true;
+            // 
             // fv_client_orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,7 +120,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fv_client_orders";
             this.Text = "Mes Achats";
+            this.Load += new System.EventHandler(this.fv_client_orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLAPRODUCTSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +137,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articles;
         private System.Windows.Forms.DataGridViewTextBoxColumn prix;
+        private System.Windows.Forms.BindingSource slaDataSetBindingSource;
+        private SlaDataSet slaDataSet;
+        private System.Windows.Forms.BindingSource sLAPRODUCTSBindingSource;
+        private SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter sLA_PRODUCTSTableAdapter;
     }
 }

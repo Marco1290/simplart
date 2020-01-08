@@ -1,7 +1,9 @@
-﻿using System;
+﻿using simplart.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,19 +40,52 @@ namespace simplart
                 lbl_error_msg.Text = "Tous les champs sont obligatoires !";
             }
 
-            // Create a new row.
-            SlaDataSet.SLA_USERSRow usersRow;
-            usersRow = SlaDataSet.SLA_USERS.NewSLA_USERSRow();
+            if(UserAuthService.userExist(txt_email.Text, txt_username.Text))
+            {
+                lbl_error_msg.Text = "Veuillez indiquer un autre email ou nom d'utilisateur !";
+            }
+
+            try
+            {
+                SlaDataSet dataSet = new SlaDataSet();
+                SlaDataSetTableAdapters.SLA_USERSTableAdapter usersTableAdapter = new SlaDataSetTableAdapters.SLA_USERSTableAdapter();
+                // Create a new row.
+                SlaDataSet.SLA_USERSRow usersRow;
+                usersRow = dataSet.SLA_USERS.NewSLA_USERSRow();
+
+                usersRow.USR_ID = 1;
+                usersRow.USR_EMAIL = txt_email.Text;
+                usersRow.USR_NAME = txt_username.Text;
+                usersRow.USR_PASSWORD = txt_password.Text;
+                usersRow.USR_AGE = (int)nud_age.Value;
+
+                switch (cbo_type.SelectedText)
+                {
+                    case "Client":
+                        usersRow.USR_TYPE = 1;
+                        break;
+                    case "Artiste":
+                        usersRow.USR_TYPE = 2;
+                        break;
+                    default:
+                        usersRow.USR_TYPE = 1;
+                        break;
+                }
+
+                // Add the row to the Region table
+                dataSet.SLA_USERS.Rows.Add(usersRow);
+
+                // Save the new row to the database
+                usersTableAdapter.Update(dataSet.SLA_USERS);
 
 
-            newRegionRow.RegionID = 5;
-            newRegionRow.RegionDescription = "NorthWestern";
-
-            // Add the row to the Region table
-            this.northwindDataSet.Region.Rows.Add(newRegionRow);
-
-            // Save the new row to the database
-            this.regionTableAdapter.Update(this.northwindDataSet.Region);
+                lbl_error_msg.Text = "Votre compte a bien été enregistré !";
+                Dispose();
+            }
+            catch(SqlException ex)
+            {
+                lbl_error_msg.Text = "Une erreur est survenue ! Veuillez introduire des champs valides !";
+            }
         }
     }
 }

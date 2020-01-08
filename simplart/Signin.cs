@@ -56,10 +56,16 @@ namespace simplart
                 return;
             }
 
-            UserAuthService.login(txt_username.Text, txt_password.Text);
-            this.main = new Main(this);
-            main.Show();
-            Hide();
+            if(UserAuthService.login(txt_username.Text, txt_password.Text))
+            {
+                this.main = new Main(this);
+                main.Show();
+                Hide();
+                return;
+            }
+
+            lbl_error_msg.Text = "Nom d'utilisateur ou mot de passe incorrect !";
+
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

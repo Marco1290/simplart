@@ -34,7 +34,7 @@
             this.btn_addTo_basket = new System.Windows.Forms.Button();
             this.nud_quantity = new System.Windows.Forms.NumericUpDown();
             this.pic_product = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_prd_price = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_quantity = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
@@ -93,6 +93,7 @@
             0,
             0,
             0});
+            this.nud_quantity.ValueChanged += new System.EventHandler(this.nud_quantity_ValueChanged);
             // 
             // pic_product
             // 
@@ -106,16 +107,17 @@
             this.pic_product.TabIndex = 0;
             this.pic_product.TabStop = false;
             // 
-            // label1
+            // lbl_prd_price
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(359, 305);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 18);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "45.-";
+            this.lbl_prd_price.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_prd_price.AutoSize = true;
+            this.lbl_prd_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbl_prd_price.Location = new System.Drawing.Point(359, 305);
+            this.lbl_prd_price.Name = "lbl_prd_price";
+            this.lbl_prd_price.Size = new System.Drawing.Size(33, 18);
+            this.lbl_prd_price.TabIndex = 6;
+            this.lbl_prd_price.Text = "45.-";
+            this.lbl_prd_price.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_price
             // 
@@ -155,7 +157,7 @@
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.lbl_quantity);
             this.Controls.Add(this.lbl_price);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_prd_price);
             this.Controls.Add(this.nud_quantity);
             this.Controls.Add(this.btn_addTo_basket);
             this.Controls.Add(this.rtxt_product_description);
@@ -165,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fv_product";
             this.Text = "Fiche du produit";
+            this.Load += new System.EventHandler(this.fv_product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_product)).EndInit();
             this.ResumeLayout(false);
@@ -179,7 +182,7 @@
         private System.Windows.Forms.RichTextBox rtxt_product_description;
         private System.Windows.Forms.Button btn_addTo_basket;
         private System.Windows.Forms.NumericUpDown nud_quantity;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_prd_price;
         private System.Windows.Forms.Label lbl_price;
         private System.Windows.Forms.Label lbl_quantity;
         private System.Windows.Forms.Label lbl_description;

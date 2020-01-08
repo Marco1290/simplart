@@ -51,19 +51,27 @@ namespace simplart
         {
 
             flp_articles_list.AutoScroll = true;
+            SlaDataSet dataSet = new SlaDataSet();
 
-            for (int i = 0; i < 50; ++i)
+            SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter listProducts = new SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
+            listProducts.Fill(dataSet.SLA_PRODUCTS);
+
+            foreach (SlaDataSet.SLA_PRODUCTSRow product in listProducts.GetData())
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
+                Label lbId = new Label();
+                lbId.Hide();
+                lbId.Text = product.PRD_ID.ToString();
+
                 Label lbNom = new Label();
                 lbNom.AutoSize = false;
-                lbNom.Text = "Test";
+                lbNom.Text = product.PRD_NAME;
                 lbNom.TextAlign = ContentAlignment.MiddleCenter;
 
                 Label lbPrix = new Label();
                 lbPrix.AutoSize = false;
-                lbPrix.Text = "45 .-";
+                lbPrix.Text = product.PRD_PRICE+" .-";
                 lbPrix.TextAlign = ContentAlignment.MiddleCenter;
 
                 flowLayoutPanel.Size = new Size(78, 122);
@@ -74,10 +82,12 @@ namespace simplart
 
                 PictureBox picture = new PictureBox();
                 picture.Size = new Size(78, 70);
+
+                flowLayoutPanel.Controls.Add(lbId);
                 flowLayoutPanel.Controls.Add(picture);
                 flowLayoutPanel.Controls.Add(lbNom);
                 flowLayoutPanel.Controls.Add(lbPrix);
-                flowLayoutPanel.Click += new EventHandler(produit_click);
+      
                 foreach (Control control in flowLayoutPanel.Controls)
                 {
                     control.Click += new EventHandler(produit_click);
@@ -87,11 +97,16 @@ namespace simplart
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Refresh();
             }
+
+              
         }
 
         private void produit_click(object sender, System.EventArgs e)
         {
-            new fv_product().ShowDialog();
+            Control control = (Control)sender;
+            FlowLayoutPanel fl = (FlowLayoutPanel)control.Parent;
+            Label lbid =  (Label)fl.Controls[0];
+            new fv_product(int.Parse(lbid.Text)).ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

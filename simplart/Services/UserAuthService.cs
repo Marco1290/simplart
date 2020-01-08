@@ -12,26 +12,43 @@ namespace simplart.Services
 
         private static SlaDataSet.SLA_USERSRow actual_user;
 
-        public static SlaDataSet.SLA_USERSRow login(String username, String password)
+        public static bool login(String username, String password)
         {
             SlaDataSet dataSet = new SlaDataSet();
 
             SlaDataSetTableAdapters.SLA_USERSTableAdapter listLogin = new SlaDataSetTableAdapters.SLA_USERSTableAdapter();
             listLogin.Fill(dataSet.SLA_USERS);
+            SlaDataSet.SLA_USERSRow user = listLogin.GetData().Where(u => u.USR_NAME.Equals(username)).First();
 
-            foreach (SlaDataSet.SLA_USERSRow user in listLogin.GetData())
+           if (user != null && user.USR_PASSWORD.Equals(password)){
+                actual_user = user;
+                return true;
+           }
+
+            return false;
+        }
+
+
+        public static bool userExist(String email, String username)
+        {
+            SlaDataSet dataSet = new SlaDataSet();
+
+            SlaDataSetTableAdapters.SLA_USERSTableAdapter listLogin = new SlaDataSetTableAdapters.SLA_USERSTableAdapter();
+            listLogin.Fill(dataSet.SLA_USERS);
+            SlaDataSet.SLA_USERSRow user = listLogin.GetData().Where(u => u.USR_NAME.Equals(username) || u.USR_EMAIL.Equals(email) ).First();
+            
+            if(user != null)
             {
-                if ((username.Equals(user.USR_EMAIL.Trim()) && password.Equals(user.USR_PASSWORD.Trim())))
-                {
-                    return user;
-                }
+                return true;
             }
-            return null;
+
+            return false;
+
         }
 
         public static bool isArtist()
         {
-            if (actual_user != null && actual_user.USR_TYPE.Equals(2))
+            if (actual_user != null && actual_user.USR_TYPE == 2)
             {
                 return true;
             }

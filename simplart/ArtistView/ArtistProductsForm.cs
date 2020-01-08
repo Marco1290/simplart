@@ -29,5 +29,10 @@ namespace simplart
             fv_artist_upd_product updateProduct = new fv_artist_upd_product();
             updateProduct.ShowDialog();
         }
+
+        private void dtg_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
