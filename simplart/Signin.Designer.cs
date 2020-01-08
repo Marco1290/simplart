@@ -115,7 +115,7 @@
             // 
             this.lbl_error_msg.AutoSize = true;
             this.lbl_error_msg.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbl_error_msg.Location = new System.Drawing.Point(331, 145);
+            this.lbl_error_msg.Location = new System.Drawing.Point(271, 149);
             this.lbl_error_msg.Name = "lbl_error_msg";
             this.lbl_error_msg.Size = new System.Drawing.Size(0, 13);
             this.lbl_error_msg.TabIndex = 8;

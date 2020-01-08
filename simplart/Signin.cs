@@ -48,19 +48,15 @@ namespace simplart
 
         private void login()
         {
+            lbl_error_msg.Text = "";
+
             if (txt_username.TextLength < 1 || txt_password.TextLength < 1)
             {
                 lbl_error_msg.Text = "Veuillez entrer un nom d'utilisateur et un mot de passe !";
+                return;
             }
 
-            if (txt_username.Text.Equals("artiste"))
-            {
-                UserAuthService.Username = txt_username.Text;
-            }
-            else
-            {
-                UserAuthService.Username = "client";
-            }
+            UserAuthService.login(txt_username.Text, txt_password.Text);
             this.main = new Main(this);
             main.Show();
             Hide();

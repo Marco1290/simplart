@@ -22,5 +22,16 @@ namespace simplart.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=HEGLOCAL;PASSWORD=Simplart_data;PERSIST SECURITY INFO=True;USER ID=SI" +
+            "MPLART_DATA")]
+        public string SIMPLART_CONNECTION {
+            get {
+                return ((string)(this["SIMPLART_CONNECTION"]));
+            }
+        }
     }
 }
