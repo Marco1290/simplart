@@ -48,11 +48,16 @@ namespace simplart.Services
 
         public static bool isArtist()
         {
-            if (actual_user != null && actual_user.USR_TYPE == 2)
+            if (actual_user != null && actual_user.USR_TYPE == 1)
             {
                 return true;
             }
             return false;
+        }
+
+        public static int getUserId()
+        {
+            return actual_user.USR_ID;
         }
     }
 }

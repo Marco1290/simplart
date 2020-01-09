@@ -1,4 +1,5 @@
 ﻿using simplart.ArtistView;
+using simplart.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,31 @@ namespace simplart
 
         private void dtg_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btn_prd_delete_Click(object sender, EventArgs e)
+        {
+            int index = dtg_products.CurrentCell.RowIndex;
+
+            DataGridViewRow dataGridViewRow = dtg_products.Rows[index];
+
+            int id = int.Parse(dataGridViewRow.Cells[0].Value.ToString());
+
+            SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter productsTableAdapter = new SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
+
+            productsTableAdapter.DeleteQuery(id);
+
+            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.VW_PRODUCTS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.sLA_PRODUCTSTableAdapter.FillByUser(this.slaDataSet.SLA_PRODUCTS, UserAuthService.getUserId());
+
+        }
+
+        private void fv_products_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.VW_PRODUCTS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.sLA_PRODUCTSTableAdapter.FillByUser(this.slaDataSet.SLA_PRODUCTS,UserAuthService.getUserId());
+
 
         }
     }

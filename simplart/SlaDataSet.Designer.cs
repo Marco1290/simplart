@@ -1466,6 +1466,8 @@ namespace simplart {
             
             private global::System.Data.DataColumn columnPRD_IMAGE_PATH;
             
+            private global::System.Data.DataColumn columnPRD_IS_ACTIF;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SLA_PRODUCTSDataTable() {
@@ -1565,6 +1567,14 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PRD_IS_ACTIFColumn {
+                get {
+                    return this.columnPRD_IS_ACTIF;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1600,7 +1610,7 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SLA_PRODUCTSRow AddSLA_PRODUCTSRow(int PRD_ID, SLA_USERSRow parentSLA_USERSRowByFK_SLA_PRD_USR_ID, SLA_CATEGORIESRow parentSLA_CATEGORIESRowByFK_SLA_PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, long PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH) {
+            public SLA_PRODUCTSRow AddSLA_PRODUCTSRow(int PRD_ID, SLA_USERSRow parentSLA_USERSRowByFK_SLA_PRD_USR_ID, SLA_CATEGORIESRow parentSLA_CATEGORIESRowByFK_SLA_PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, long PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH, short PRD_IS_ACTIF) {
                 SLA_PRODUCTSRow rowSLA_PRODUCTSRow = ((SLA_PRODUCTSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PRD_ID,
@@ -1610,7 +1620,8 @@ namespace simplart {
                         PRD_PRICE,
                         PRD_QUANTITY,
                         PRD_DESCRIPTION,
-                        PRD_IMAGE_PATH};
+                        PRD_IMAGE_PATH,
+                        PRD_IS_ACTIF};
                 if ((parentSLA_USERSRowByFK_SLA_PRD_USR_ID != null)) {
                     columnValuesArray[1] = parentSLA_USERSRowByFK_SLA_PRD_USR_ID[0];
                 }
@@ -1654,6 +1665,7 @@ namespace simplart {
                 this.columnPRD_QUANTITY = base.Columns["PRD_QUANTITY"];
                 this.columnPRD_DESCRIPTION = base.Columns["PRD_DESCRIPTION"];
                 this.columnPRD_IMAGE_PATH = base.Columns["PRD_IMAGE_PATH"];
+                this.columnPRD_IS_ACTIF = base.Columns["PRD_IS_ACTIF"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1675,6 +1687,8 @@ namespace simplart {
                 base.Columns.Add(this.columnPRD_DESCRIPTION);
                 this.columnPRD_IMAGE_PATH = new global::System.Data.DataColumn("PRD_IMAGE_PATH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPRD_IMAGE_PATH);
+                this.columnPRD_IS_ACTIF = new global::System.Data.DataColumn("PRD_IS_ACTIF", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRD_IS_ACTIF);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPRD_ID}, true));
                 this.columnPRD_ID.AllowDBNull = false;
@@ -3768,6 +3782,23 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public short PRD_IS_ACTIF {
+                get {
+                    try {
+                        return ((short)(this[this.tableSLA_PRODUCTS.PRD_IS_ACTIFColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PRD_IS_ACTIF\' dans la table \'SLA_PRODUCTS\' est DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSLA_PRODUCTS.PRD_IS_ACTIFColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SLA_CATEGORIESRow SLA_CATEGORIESRow {
                 get {
                     return ((SLA_CATEGORIESRow)(this.GetParentRow(this.Table.ParentRelations["FK_SLA_PRD_CAT_ID"])));
@@ -3870,6 +3901,18 @@ namespace simplart {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPRD_IMAGE_PATHNull() {
                 this[this.tableSLA_PRODUCTS.PRD_IMAGE_PATHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRD_IS_ACTIFNull() {
+                return this.IsNull(this.tableSLA_PRODUCTS.PRD_IS_ACTIFColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRD_IS_ACTIFNull() {
+                this[this.tableSLA_PRODUCTS.PRD_IS_ACTIFColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6309,10 +6352,11 @@ namespace simplart.SlaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PRD_QUANTITY", "PRD_QUANTITY");
             tableMapping.ColumnMappings.Add("PRD_DESCRIPTION", "PRD_DESCRIPTION");
             tableMapping.ColumnMappings.Add("PRD_IMAGE_PATH", "PRD_IMAGE_PATH");
+            tableMapping.ColumnMappings.Add("PRD_IS_ACTIF", "PRD_IS_ACTIF");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SIMPLART_DATA"".""SLA_PRODUCTS"" WHERE ((""PRD_ID"" = :Original_PRD_ID) AND ((:IsNull_PRD_USR_ID = 1 AND ""PRD_USR_ID"" IS NULL) OR (""PRD_USR_ID"" = :Original_PRD_USR_ID)) AND ((:IsNull_PRD_CAT_ID = 1 AND ""PRD_CAT_ID"" IS NULL) OR (""PRD_CAT_ID"" = :Original_PRD_CAT_ID)) AND ((:IsNull_PRD_NAME = 1 AND ""PRD_NAME"" IS NULL) OR (""PRD_NAME"" = :Original_PRD_NAME)) AND ((:IsNull_PRD_PRICE = 1 AND ""PRD_PRICE"" IS NULL) OR (""PRD_PRICE"" = :Original_PRD_PRICE)) AND ((:IsNull_PRD_QUANTITY = 1 AND ""PRD_QUANTITY"" IS NULL) OR (""PRD_QUANTITY"" = :Original_PRD_QUANTITY)) AND ((:IsNull_PRD_DESCRIPTION = 1 AND ""PRD_DESCRIPTION"" IS NULL) OR (""PRD_DESCRIPTION"" = :Original_PRD_DESCRIPTION)) AND ((:IsNull_PRD_IMAGE_PATH = 1 AND ""PRD_IMAGE_PATH"" IS NULL) OR (""PRD_IMAGE_PATH"" = :Original_PRD_IMAGE_PATH)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SIMPLART_DATA"".""SLA_PRODUCTS"" WHERE ((""PRD_ID"" = :Original_PRD_ID) AND ((:IsNull_PRD_USR_ID = 1 AND ""PRD_USR_ID"" IS NULL) OR (""PRD_USR_ID"" = :Original_PRD_USR_ID)) AND ((:IsNull_PRD_CAT_ID = 1 AND ""PRD_CAT_ID"" IS NULL) OR (""PRD_CAT_ID"" = :Original_PRD_CAT_ID)) AND ((:IsNull_PRD_NAME = 1 AND ""PRD_NAME"" IS NULL) OR (""PRD_NAME"" = :Original_PRD_NAME)) AND ((:IsNull_PRD_PRICE = 1 AND ""PRD_PRICE"" IS NULL) OR (""PRD_PRICE"" = :Original_PRD_PRICE)) AND ((:IsNull_PRD_QUANTITY = 1 AND ""PRD_QUANTITY"" IS NULL) OR (""PRD_QUANTITY"" = :Original_PRD_QUANTITY)) AND ((:IsNull_PRD_DESCRIPTION = 1 AND ""PRD_DESCRIPTION"" IS NULL) OR (""PRD_DESCRIPTION"" = :Original_PRD_DESCRIPTION)) AND ((:IsNull_PRD_IMAGE_PATH = 1 AND ""PRD_IMAGE_PATH"" IS NULL) OR (""PRD_IMAGE_PATH"" = :Original_PRD_IMAGE_PATH)) AND ((:IsNull_PRD_IS_ACTIF = 1 AND ""PRD_IS_ACTIF"" IS NULL) OR (""PRD_IS_ACTIF"" = :Original_PRD_IS_ACTIF)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PRD_ID";
@@ -6452,9 +6496,28 @@ namespace simplart.SlaDataSetTableAdapters {
             param.SourceColumn = "PRD_IMAGE_PATH";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""SIMPLART_DATA"".""SLA_PRODUCTS"" (""PRD_ID"", ""PRD_USR_ID"", ""PRD_CAT_ID"", ""PRD_NAME"", ""PRD_PRICE"", ""PRD_QUANTITY"", ""PRD_DESCRIPTION"", ""PRD_IMAGE_PATH"") VALUES (:PRD_ID, :PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY, :PRD_DESCRIPTION, :PRD_IMAGE_PATH)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""SIMPLART_DATA"".""SLA_PRODUCTS"" (""PRD_ID"", ""PRD_USR_ID"", ""PRD_CAT_ID"", ""PRD_NAME"", ""PRD_PRICE"", ""PRD_QUANTITY"", ""PRD_DESCRIPTION"", ""PRD_IMAGE_PATH"", ""PRD_IS_ACTIF"") VALUES (:PRD_ID, :PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY, :PRD_DESCRIPTION, :PRD_IMAGE_PATH, :PRD_IS_ACTIF)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PRD_ID";
@@ -6516,9 +6579,17 @@ namespace simplart.SlaDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PRD_IMAGE_PATH";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SIMPLART_DATA"".""SLA_PRODUCTS"" SET ""PRD_ID"" = :PRD_ID, ""PRD_USR_ID"" = :PRD_USR_ID, ""PRD_CAT_ID"" = :PRD_CAT_ID, ""PRD_NAME"" = :PRD_NAME, ""PRD_PRICE"" = :PRD_PRICE, ""PRD_QUANTITY"" = :PRD_QUANTITY, ""PRD_DESCRIPTION"" = :PRD_DESCRIPTION, ""PRD_IMAGE_PATH"" = :PRD_IMAGE_PATH WHERE ((""PRD_ID"" = :Original_PRD_ID) AND ((:IsNull_PRD_USR_ID = 1 AND ""PRD_USR_ID"" IS NULL) OR (""PRD_USR_ID"" = :Original_PRD_USR_ID)) AND ((:IsNull_PRD_CAT_ID = 1 AND ""PRD_CAT_ID"" IS NULL) OR (""PRD_CAT_ID"" = :Original_PRD_CAT_ID)) AND ((:IsNull_PRD_NAME = 1 AND ""PRD_NAME"" IS NULL) OR (""PRD_NAME"" = :Original_PRD_NAME)) AND ((:IsNull_PRD_PRICE = 1 AND ""PRD_PRICE"" IS NULL) OR (""PRD_PRICE"" = :Original_PRD_PRICE)) AND ((:IsNull_PRD_QUANTITY = 1 AND ""PRD_QUANTITY"" IS NULL) OR (""PRD_QUANTITY"" = :Original_PRD_QUANTITY)) AND ((:IsNull_PRD_DESCRIPTION = 1 AND ""PRD_DESCRIPTION"" IS NULL) OR (""PRD_DESCRIPTION"" = :Original_PRD_DESCRIPTION)) AND ((:IsNull_PRD_IMAGE_PATH = 1 AND ""PRD_IMAGE_PATH"" IS NULL) OR (""PRD_IMAGE_PATH"" = :Original_PRD_IMAGE_PATH)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SIMPLART_DATA"".""SLA_PRODUCTS"" SET ""PRD_ID"" = :PRD_ID, ""PRD_USR_ID"" = :PRD_USR_ID, ""PRD_CAT_ID"" = :PRD_CAT_ID, ""PRD_NAME"" = :PRD_NAME, ""PRD_PRICE"" = :PRD_PRICE, ""PRD_QUANTITY"" = :PRD_QUANTITY, ""PRD_DESCRIPTION"" = :PRD_DESCRIPTION, ""PRD_IMAGE_PATH"" = :PRD_IMAGE_PATH, ""PRD_IS_ACTIF"" = :PRD_IS_ACTIF WHERE ((""PRD_ID"" = :Original_PRD_ID) AND ((:IsNull_PRD_USR_ID = 1 AND ""PRD_USR_ID"" IS NULL) OR (""PRD_USR_ID"" = :Original_PRD_USR_ID)) AND ((:IsNull_PRD_CAT_ID = 1 AND ""PRD_CAT_ID"" IS NULL) OR (""PRD_CAT_ID"" = :Original_PRD_CAT_ID)) AND ((:IsNull_PRD_NAME = 1 AND ""PRD_NAME"" IS NULL) OR (""PRD_NAME"" = :Original_PRD_NAME)) AND ((:IsNull_PRD_PRICE = 1 AND ""PRD_PRICE"" IS NULL) OR (""PRD_PRICE"" = :Original_PRD_PRICE)) AND ((:IsNull_PRD_QUANTITY = 1 AND ""PRD_QUANTITY"" IS NULL) OR (""PRD_QUANTITY"" = :Original_PRD_QUANTITY)) AND ((:IsNull_PRD_DESCRIPTION = 1 AND ""PRD_DESCRIPTION"" IS NULL) OR (""PRD_DESCRIPTION"" = :Original_PRD_DESCRIPTION)) AND ((:IsNull_PRD_IMAGE_PATH = 1 AND ""PRD_IMAGE_PATH"" IS NULL) OR (""PRD_IMAGE_PATH"" = :Original_PRD_IMAGE_PATH)) AND ((:IsNull_PRD_IS_ACTIF = 1 AND ""PRD_IS_ACTIF"" IS NULL) OR (""PRD_IS_ACTIF"" = :Original_PRD_IS_ACTIF)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PRD_ID";
@@ -6579,6 +6650,14 @@ namespace simplart.SlaDataSetTableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "PRD_IMAGE_PATH";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PRD_ID";
@@ -6718,6 +6797,25 @@ namespace simplart.SlaDataSetTableAdapters {
             param.SourceColumn = "PRD_IMAGE_PATH";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6730,12 +6828,54 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DES" +
-                "CRIPTION, PRD_IMAGE_PATH FROM SIMPLART_DATA.SLA_PRODUCTS";
+                "CRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF FROM SIMPLART_DATA.SLA_PRODUCTS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "UPDATE  \"SIMPLART_DATA\".\"SLA_PRODUCTS\" SET \"PRD_IS_ACTIF\" = 0   WHERE (\"PRD_ID\" =" +
+                " :Original_PRD_ID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":Original_PRD_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, " +
+                "PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF\r\nFROM            SIMPLART_DATA.SLA" +
+                "_PRODUCTS\r\nWHERE        (PRD_USR_ID = :USR_ID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_USR_ID";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, " +
+                "PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF\r\nFROM            SIMPLART_DATA.SLA" +
+                "_PRODUCTS\r\nWHERE        (PRD_ID = :PRD_ID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_ID";
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6757,6 +6897,54 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SlaDataSet.SLA_PRODUCTSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SlaDataSet.SLA_PRODUCTSDataTable dataTable = new SlaDataSet.SLA_PRODUCTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUser(SlaDataSet.SLA_PRODUCTSDataTable dataTable, global::System.Nullable<decimal> USR_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((USR_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(USR_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SlaDataSet.SLA_PRODUCTSDataTable GetDataByUser(global::System.Nullable<decimal> USR_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((USR_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(USR_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            SlaDataSet.SLA_PRODUCTSDataTable dataTable = new SlaDataSet.SLA_PRODUCTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SlaDataSet.SLA_PRODUCTSDataTable GetDataByID(decimal PRD_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PRD_ID));
             SlaDataSet.SLA_PRODUCTSDataTable dataTable = new SlaDataSet.SLA_PRODUCTSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6795,7 +6983,7 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PRD_ID, global::System.Nullable<int> Original_PRD_USR_ID, global::System.Nullable<int> Original_PRD_CAT_ID, string Original_PRD_NAME, string Original_PRD_PRICE, global::System.Nullable<long> Original_PRD_QUANTITY, string Original_PRD_DESCRIPTION, string Original_PRD_IMAGE_PATH) {
+        public virtual int Delete(int Original_PRD_ID, global::System.Nullable<int> Original_PRD_USR_ID, global::System.Nullable<int> Original_PRD_CAT_ID, string Original_PRD_NAME, string Original_PRD_PRICE, global::System.Nullable<long> Original_PRD_QUANTITY, string Original_PRD_DESCRIPTION, string Original_PRD_IMAGE_PATH, global::System.Nullable<short> Original_PRD_IS_ACTIF) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PRD_ID));
             if ((Original_PRD_USR_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -6853,6 +7041,14 @@ namespace simplart.SlaDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_PRD_IMAGE_PATH));
             }
+            if ((Original_PRD_IS_ACTIF.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((short)(Original_PRD_IS_ACTIF.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6873,7 +7069,7 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int PRD_ID, global::System.Nullable<int> PRD_USR_ID, global::System.Nullable<int> PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, global::System.Nullable<long> PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH) {
+        public virtual int Insert(int PRD_ID, global::System.Nullable<int> PRD_USR_ID, global::System.Nullable<int> PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, global::System.Nullable<long> PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH, global::System.Nullable<short> PRD_IS_ACTIF) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PRD_ID));
             if ((PRD_USR_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PRD_USR_ID.Value));
@@ -6917,6 +7113,12 @@ namespace simplart.SlaDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PRD_IMAGE_PATH));
             }
+            if ((PRD_IS_ACTIF.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((short)(PRD_IS_ACTIF.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6946,6 +7148,7 @@ namespace simplart.SlaDataSetTableAdapters {
                     global::System.Nullable<long> PRD_QUANTITY, 
                     string PRD_DESCRIPTION, 
                     string PRD_IMAGE_PATH, 
+                    global::System.Nullable<short> PRD_IS_ACTIF, 
                     int Original_PRD_ID, 
                     global::System.Nullable<int> Original_PRD_USR_ID, 
                     global::System.Nullable<int> Original_PRD_CAT_ID, 
@@ -6953,7 +7156,8 @@ namespace simplart.SlaDataSetTableAdapters {
                     string Original_PRD_PRICE, 
                     global::System.Nullable<long> Original_PRD_QUANTITY, 
                     string Original_PRD_DESCRIPTION, 
-                    string Original_PRD_IMAGE_PATH) {
+                    string Original_PRD_IMAGE_PATH, 
+                    global::System.Nullable<short> Original_PRD_IS_ACTIF) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PRD_ID));
             if ((PRD_USR_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PRD_USR_ID.Value));
@@ -6997,62 +7201,76 @@ namespace simplart.SlaDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PRD_IMAGE_PATH));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_PRD_ID));
-            if ((Original_PRD_USR_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_PRD_USR_ID.Value));
+            if ((PRD_IS_ACTIF.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(PRD_IS_ACTIF.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_PRD_ID));
+            if ((Original_PRD_USR_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_PRD_USR_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_PRD_CAT_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_PRD_CAT_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_PRD_CAT_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_PRD_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_PRD_NAME));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PRD_NAME));
             }
             if ((Original_PRD_PRICE == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PRD_PRICE));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_PRD_PRICE));
             }
             if ((Original_PRD_QUANTITY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Original_PRD_QUANTITY.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((long)(Original_PRD_QUANTITY.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_PRD_DESCRIPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_PRD_DESCRIPTION));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_PRD_DESCRIPTION));
             }
             if ((Original_PRD_IMAGE_PATH == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_PRD_IMAGE_PATH));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_PRD_IMAGE_PATH));
+            }
+            if ((Original_PRD_IS_ACTIF.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((short)(Original_PRD_IS_ACTIF.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7074,8 +7292,49 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> PRD_USR_ID, global::System.Nullable<int> PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, global::System.Nullable<long> PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH, int Original_PRD_ID, global::System.Nullable<int> Original_PRD_USR_ID, global::System.Nullable<int> Original_PRD_CAT_ID, string Original_PRD_NAME, string Original_PRD_PRICE, global::System.Nullable<long> Original_PRD_QUANTITY, string Original_PRD_DESCRIPTION, string Original_PRD_IMAGE_PATH) {
-            return this.Update(Original_PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DESCRIPTION, PRD_IMAGE_PATH, Original_PRD_ID, Original_PRD_USR_ID, Original_PRD_CAT_ID, Original_PRD_NAME, Original_PRD_PRICE, Original_PRD_QUANTITY, Original_PRD_DESCRIPTION, Original_PRD_IMAGE_PATH);
+        public virtual int Update(
+                    global::System.Nullable<int> PRD_USR_ID, 
+                    global::System.Nullable<int> PRD_CAT_ID, 
+                    string PRD_NAME, 
+                    string PRD_PRICE, 
+                    global::System.Nullable<long> PRD_QUANTITY, 
+                    string PRD_DESCRIPTION, 
+                    string PRD_IMAGE_PATH, 
+                    global::System.Nullable<short> PRD_IS_ACTIF, 
+                    int Original_PRD_ID, 
+                    global::System.Nullable<int> Original_PRD_USR_ID, 
+                    global::System.Nullable<int> Original_PRD_CAT_ID, 
+                    string Original_PRD_NAME, 
+                    string Original_PRD_PRICE, 
+                    global::System.Nullable<long> Original_PRD_QUANTITY, 
+                    string Original_PRD_DESCRIPTION, 
+                    string Original_PRD_IMAGE_PATH, 
+                    global::System.Nullable<short> Original_PRD_IS_ACTIF) {
+            return this.Update(Original_PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF, Original_PRD_ID, Original_PRD_USR_ID, Original_PRD_CAT_ID, Original_PRD_NAME, Original_PRD_PRICE, Original_PRD_QUANTITY, Original_PRD_DESCRIPTION, Original_PRD_IMAGE_PATH, Original_PRD_IS_ACTIF);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(decimal Original_PRD_ID) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((decimal)(Original_PRD_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

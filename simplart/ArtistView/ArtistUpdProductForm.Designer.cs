@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_artist_upd_product));
             this.lbl_category = new System.Windows.Forms.Label();
             this.cbo_category = new System.Windows.Forms.ComboBox();
@@ -45,7 +46,13 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_prod_num = new System.Windows.Forms.Label();
             this.btn_updProduct = new System.Windows.Forms.Button();
+            this.slaDataSet = new simplart.SlaDataSet();
+            this.sLA_PRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLA_PRODUCTSTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
+            this.tableAdapterManager = new simplart.SlaDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.txt_quantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLA_PRODUCTSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_category
@@ -206,11 +213,35 @@
             this.btn_updProduct.Text = "Enregistrer";
             this.btn_updProduct.UseVisualStyleBackColor = true;
             // 
+            // slaDataSet
+            // 
+            this.slaDataSet.DataSetName = "SlaDataSet";
+            this.slaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sLA_PRODUCTSBindingSource
+            // 
+            this.sLA_PRODUCTSBindingSource.DataMember = "SLA_PRODUCTS";
+            this.sLA_PRODUCTSBindingSource.DataSource = this.slaDataSet;
+            // 
+            // sLA_PRODUCTSTableAdapter
+            // 
+            this.sLA_PRODUCTSTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.SLA_CATEGORIESTableAdapter = null;
+            this.tableAdapterManager.SLA_ORDER_PRODUCTSTableAdapter = null;
+            this.tableAdapterManager.SLA_ORDERSTableAdapter = null;
+            this.tableAdapterManager.SLA_PRODUCTSTableAdapter = this.sLA_PRODUCTSTableAdapter;
+            this.tableAdapterManager.SLA_USERSTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = simplart.SlaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // fv_artist_upd_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 511);
+            this.ClientSize = new System.Drawing.Size(934, 729);
             this.Controls.Add(this.btn_updProduct);
             this.Controls.Add(this.lbl_prod_num);
             this.Controls.Add(this.lbl_category);
@@ -230,7 +261,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fv_artist_upd_product";
             this.Text = "Modification d\'un produit";
+            this.Load += new System.EventHandler(this.fv_artist_upd_product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_quantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLA_PRODUCTSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +288,9 @@
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label lbl_prod_num;
         private System.Windows.Forms.Button btn_updProduct;
+        private SlaDataSet slaDataSet;
+        private System.Windows.Forms.BindingSource sLA_PRODUCTSBindingSource;
+        private SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter sLA_PRODUCTSTableAdapter;
+        private SlaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
