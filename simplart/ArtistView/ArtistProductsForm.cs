@@ -21,13 +21,13 @@ namespace simplart
 
         private void button2_Click(object sender, EventArgs e)
         {
-            fv_create_product createProduct = new fv_create_product();
+            fv_create_product createProduct = new fv_create_product(this);
             createProduct.ShowDialog();
         }
 
         private void btn_updProduct_Click(object sender, EventArgs e)
         {
-            fv_artist_upd_product updateProduct = new fv_artist_upd_product();
+            fv_artist_upd_product updateProduct = new fv_artist_upd_product(this, getIdRow());
             updateProduct.ShowDialog();
         }
 
@@ -36,27 +36,35 @@ namespace simplart
 
         }
 
-        private void btn_prd_delete_Click(object sender, EventArgs e)
+        public void updateProductDataGridView()
+        {
+            this.sLA_PRODUCTSTableAdapter.FillByUser(this.slaDataSet.SLA_PRODUCTS, UserAuthService.getUserId());
+        }
+        private int getIdRow()
         {
             int index = dtg_products.CurrentCell.RowIndex;
 
             DataGridViewRow dataGridViewRow = dtg_products.Rows[index];
 
-            int id = int.Parse(dataGridViewRow.Cells[0].Value.ToString());
+            return int.Parse(dataGridViewRow.Cells[0].Value.ToString());
+        }
+
+        private void btn_prd_delete_Click(object sender, EventArgs e)
+        {
+            
+            
 
             SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter productsTableAdapter = new SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
 
-            productsTableAdapter.DeleteQuery(id);
+            productsTableAdapter.DeleteQuery(getIdRow());
 
-            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.VW_PRODUCTS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.sLA_PRODUCTSTableAdapter.FillByUser(this.slaDataSet.SLA_PRODUCTS, UserAuthService.getUserId());
+            updateProductDataGridView();
 
         }
 
         private void fv_products_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.VW_PRODUCTS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.sLA_PRODUCTSTableAdapter.FillByUser(this.slaDataSet.SLA_PRODUCTS,UserAuthService.getUserId());
+            updateProductDataGridView();
 
 
         }

@@ -31,28 +31,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_products));
             this.dtg_products = new System.Windows.Forms.DataGridView();
-            this.vWPRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLAPRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.slaDataSet = new simplart.SlaDataSet();
+            this.vWPRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_addProduct = new System.Windows.Forms.Button();
             this.btn_updProduct = new System.Windows.Forms.Button();
             this.btn_prd_delete = new System.Windows.Forms.Button();
-            this.sLAPRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sLA_PRODUCTSTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
             this.vW_PRODUCTSTableAdapter = new simplart.SlaDataSetTableAdapters.VW_PRODUCTSTableAdapter();
             this.pRDIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRDUSRIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRDCATIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRDNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRDPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRDQUANTITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRDDESCRIPTIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRDISACTIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_products)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vWPRODUCTSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sLAPRODUCTSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWPRODUCTSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtg_products
@@ -64,14 +60,10 @@
             this.dtg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pRDIDDataGridViewTextBoxColumn,
-            this.pRDUSRIDDataGridViewTextBoxColumn,
-            this.pRDCATIDDataGridViewTextBoxColumn,
             this.pRDNAMEDataGridViewTextBoxColumn,
             this.pRDPRICEDataGridViewTextBoxColumn,
             this.pRDQUANTITYDataGridViewTextBoxColumn,
-            this.pRDDESCRIPTIONDataGridViewTextBoxColumn,
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn,
-            this.pRDISACTIFDataGridViewTextBoxColumn});
+            this.pRDDESCRIPTIONDataGridViewTextBoxColumn});
             this.dtg_products.DataSource = this.sLAPRODUCTSBindingSource;
             this.dtg_products.Location = new System.Drawing.Point(161, 146);
             this.dtg_products.Name = "dtg_products";
@@ -80,15 +72,20 @@
             this.dtg_products.TabIndex = 0;
             this.dtg_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_products_CellContentClick);
             // 
-            // vWPRODUCTSBindingSource
+            // sLAPRODUCTSBindingSource
             // 
-            this.vWPRODUCTSBindingSource.DataMember = "VW_PRODUCTS";
-            this.vWPRODUCTSBindingSource.DataSource = this.slaDataSet;
+            this.sLAPRODUCTSBindingSource.DataMember = "SLA_PRODUCTS";
+            this.sLAPRODUCTSBindingSource.DataSource = this.slaDataSet;
             // 
             // slaDataSet
             // 
             this.slaDataSet.DataSetName = "SlaDataSet";
             this.slaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vWPRODUCTSBindingSource
+            // 
+            this.vWPRODUCTSBindingSource.DataMember = "VW_PRODUCTS";
+            this.vWPRODUCTSBindingSource.DataSource = this.slaDataSet;
             // 
             // lbl_title
             // 
@@ -133,11 +130,6 @@
             this.btn_prd_delete.UseVisualStyleBackColor = true;
             this.btn_prd_delete.Click += new System.EventHandler(this.btn_prd_delete_Click);
             // 
-            // sLAPRODUCTSBindingSource
-            // 
-            this.sLAPRODUCTSBindingSource.DataMember = "SLA_PRODUCTS";
-            this.sLAPRODUCTSBindingSource.DataSource = this.slaDataSet;
-            // 
             // sLA_PRODUCTSTableAdapter
             // 
             this.sLA_PRODUCTSTableAdapter.ClearBeforeFill = true;
@@ -149,65 +141,37 @@
             // pRDIDDataGridViewTextBoxColumn
             // 
             this.pRDIDDataGridViewTextBoxColumn.DataPropertyName = "PRD_ID";
-            this.pRDIDDataGridViewTextBoxColumn.HeaderText = "PRD_ID";
+            this.pRDIDDataGridViewTextBoxColumn.HeaderText = "Référence";
             this.pRDIDDataGridViewTextBoxColumn.Name = "pRDIDDataGridViewTextBoxColumn";
             this.pRDIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRDUSRIDDataGridViewTextBoxColumn
-            // 
-            this.pRDUSRIDDataGridViewTextBoxColumn.DataPropertyName = "PRD_USR_ID";
-            this.pRDUSRIDDataGridViewTextBoxColumn.HeaderText = "PRD_USR_ID";
-            this.pRDUSRIDDataGridViewTextBoxColumn.Name = "pRDUSRIDDataGridViewTextBoxColumn";
-            this.pRDUSRIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRDCATIDDataGridViewTextBoxColumn
-            // 
-            this.pRDCATIDDataGridViewTextBoxColumn.DataPropertyName = "PRD_CAT_ID";
-            this.pRDCATIDDataGridViewTextBoxColumn.HeaderText = "PRD_CAT_ID";
-            this.pRDCATIDDataGridViewTextBoxColumn.Name = "pRDCATIDDataGridViewTextBoxColumn";
-            this.pRDCATIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRDNAMEDataGridViewTextBoxColumn
             // 
             this.pRDNAMEDataGridViewTextBoxColumn.DataPropertyName = "PRD_NAME";
-            this.pRDNAMEDataGridViewTextBoxColumn.HeaderText = "PRD_NAME";
+            this.pRDNAMEDataGridViewTextBoxColumn.HeaderText = "Nom";
             this.pRDNAMEDataGridViewTextBoxColumn.Name = "pRDNAMEDataGridViewTextBoxColumn";
             this.pRDNAMEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRDPRICEDataGridViewTextBoxColumn
             // 
             this.pRDPRICEDataGridViewTextBoxColumn.DataPropertyName = "PRD_PRICE";
-            this.pRDPRICEDataGridViewTextBoxColumn.HeaderText = "PRD_PRICE";
+            this.pRDPRICEDataGridViewTextBoxColumn.HeaderText = "Prix";
             this.pRDPRICEDataGridViewTextBoxColumn.Name = "pRDPRICEDataGridViewTextBoxColumn";
             this.pRDPRICEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRDQUANTITYDataGridViewTextBoxColumn
             // 
             this.pRDQUANTITYDataGridViewTextBoxColumn.DataPropertyName = "PRD_QUANTITY";
-            this.pRDQUANTITYDataGridViewTextBoxColumn.HeaderText = "PRD_QUANTITY";
+            this.pRDQUANTITYDataGridViewTextBoxColumn.HeaderText = "Quantité";
             this.pRDQUANTITYDataGridViewTextBoxColumn.Name = "pRDQUANTITYDataGridViewTextBoxColumn";
             this.pRDQUANTITYDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRDDESCRIPTIONDataGridViewTextBoxColumn
             // 
             this.pRDDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "PRD_DESCRIPTION";
-            this.pRDDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "PRD_DESCRIPTION";
+            this.pRDDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "Description";
             this.pRDDESCRIPTIONDataGridViewTextBoxColumn.Name = "pRDDESCRIPTIONDataGridViewTextBoxColumn";
             this.pRDDESCRIPTIONDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRDIMAGEPATHDataGridViewTextBoxColumn
-            // 
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn.DataPropertyName = "PRD_IMAGE_PATH";
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn.HeaderText = "PRD_IMAGE_PATH";
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn.Name = "pRDIMAGEPATHDataGridViewTextBoxColumn";
-            this.pRDIMAGEPATHDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pRDISACTIFDataGridViewTextBoxColumn
-            // 
-            this.pRDISACTIFDataGridViewTextBoxColumn.DataPropertyName = "PRD_IS_ACTIF";
-            this.pRDISACTIFDataGridViewTextBoxColumn.HeaderText = "PRD_IS_ACTIF";
-            this.pRDISACTIFDataGridViewTextBoxColumn.Name = "pRDISACTIFDataGridViewTextBoxColumn";
-            this.pRDISACTIFDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fv_products
             // 
@@ -224,9 +188,9 @@
             this.Text = "Mes Produits";
             this.Load += new System.EventHandler(this.fv_products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_products)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vWPRODUCTSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sLAPRODUCTSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWPRODUCTSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,13 +209,9 @@
         private System.Windows.Forms.BindingSource vWPRODUCTSBindingSource;
         private SlaDataSetTableAdapters.VW_PRODUCTSTableAdapter vW_PRODUCTSTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRDIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRDUSRIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRDCATIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRDNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRDPRICEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRDQUANTITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRDDESCRIPTIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRDIMAGEPATHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRDISACTIFDataGridViewTextBoxColumn;
     }
 }

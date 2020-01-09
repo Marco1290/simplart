@@ -59,5 +59,10 @@ namespace simplart.Services
         {
             return actual_user.USR_ID;
         }
+
+        public static void disconnect()
+        {
+            actual_user = null;
+        }
     }
 }

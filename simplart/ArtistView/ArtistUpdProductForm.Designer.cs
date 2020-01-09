@@ -31,12 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_artist_upd_product));
             this.lbl_category = new System.Windows.Forms.Label();
-            this.cbo_category = new System.Windows.Forms.ComboBox();
             this.txt_product_pic = new System.Windows.Forms.TextBox();
             this.btn_product_pic = new System.Windows.Forms.Button();
             this.rtxt_description = new System.Windows.Forms.RichTextBox();
             this.txt_price = new System.Windows.Forms.TextBox();
-            this.txt_quantity = new System.Windows.Forms.NumericUpDown();
+            this.nud_quantity = new System.Windows.Forms.NumericUpDown();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_product_pic = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
@@ -50,9 +49,15 @@
             this.sLA_PRODUCTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sLA_PRODUCTSTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
             this.tableAdapterManager = new simplart.SlaDataSetTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_quantity)).BeginInit();
+            this.slaDataSet1 = new simplart.SlaDataSet();
+            this.sLACATEGORIESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLA_CATEGORIESTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_CATEGORIESTableAdapter();
+            this.cbo_category = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sLA_PRODUCTSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLACATEGORIESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_category
@@ -64,19 +69,6 @@
             this.lbl_category.Size = new System.Drawing.Size(52, 13);
             this.lbl_category.TabIndex = 28;
             this.lbl_category.Text = "Catégorie";
-            // 
-            // cbo_category
-            // 
-            this.cbo_category.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbo_category.FormattingEnabled = true;
-            this.cbo_category.Items.AddRange(new object[] {
-            "Musique",
-            "Film",
-            "Sculpture"});
-            this.cbo_category.Location = new System.Drawing.Point(602, 190);
-            this.cbo_category.Name = "cbo_category";
-            this.cbo_category.Size = new System.Drawing.Size(121, 21);
-            this.cbo_category.TabIndex = 27;
             // 
             // txt_product_pic
             // 
@@ -114,13 +106,13 @@
             this.txt_price.Size = new System.Drawing.Size(100, 20);
             this.txt_price.TabIndex = 23;
             // 
-            // txt_quantity
+            // nud_quantity
             // 
-            this.txt_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_quantity.Location = new System.Drawing.Point(343, 190);
-            this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Size = new System.Drawing.Size(50, 20);
-            this.txt_quantity.TabIndex = 22;
+            this.nud_quantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nud_quantity.Location = new System.Drawing.Point(343, 190);
+            this.nud_quantity.Name = "nud_quantity";
+            this.nud_quantity.Size = new System.Drawing.Size(50, 20);
+            this.nud_quantity.TabIndex = 22;
             // 
             // txt_name
             // 
@@ -212,6 +204,7 @@
             this.btn_updProduct.TabIndex = 30;
             this.btn_updProduct.Text = "Enregistrer";
             this.btn_updProduct.UseVisualStyleBackColor = true;
+            this.btn_updProduct.Click += new System.EventHandler(this.btn_updProduct_Click);
             // 
             // slaDataSet
             // 
@@ -237,20 +230,45 @@
             this.tableAdapterManager.SLA_USERSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = simplart.SlaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // slaDataSet1
+            // 
+            this.slaDataSet1.DataSetName = "SlaDataSet";
+            this.slaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sLACATEGORIESBindingSource
+            // 
+            this.sLACATEGORIESBindingSource.DataMember = "SLA_CATEGORIES";
+            this.sLACATEGORIESBindingSource.DataSource = this.slaDataSet1;
+            // 
+            // sLA_CATEGORIESTableAdapter
+            // 
+            this.sLA_CATEGORIESTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbo_category
+            // 
+            this.cbo_category.DataSource = this.sLACATEGORIESBindingSource;
+            this.cbo_category.DisplayMember = "CAT_NAME";
+            this.cbo_category.FormattingEnabled = true;
+            this.cbo_category.Location = new System.Drawing.Point(602, 188);
+            this.cbo_category.Name = "cbo_category";
+            this.cbo_category.Size = new System.Drawing.Size(121, 21);
+            this.cbo_category.TabIndex = 31;
+            this.cbo_category.ValueMember = "CAT_ID";
+            // 
             // fv_artist_upd_product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 729);
+            this.Controls.Add(this.cbo_category);
             this.Controls.Add(this.btn_updProduct);
             this.Controls.Add(this.lbl_prod_num);
             this.Controls.Add(this.lbl_category);
-            this.Controls.Add(this.cbo_category);
             this.Controls.Add(this.txt_product_pic);
             this.Controls.Add(this.btn_product_pic);
             this.Controls.Add(this.rtxt_description);
             this.Controls.Add(this.txt_price);
-            this.Controls.Add(this.txt_quantity);
+            this.Controls.Add(this.nud_quantity);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_product_pic);
             this.Controls.Add(this.lbl_description);
@@ -262,9 +280,11 @@
             this.Name = "fv_artist_upd_product";
             this.Text = "Modification d\'un produit";
             this.Load += new System.EventHandler(this.fv_artist_upd_product_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_quantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sLA_PRODUCTSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLACATEGORIESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,12 +293,11 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_category;
-        private System.Windows.Forms.ComboBox cbo_category;
         private System.Windows.Forms.TextBox txt_product_pic;
         private System.Windows.Forms.Button btn_product_pic;
         private System.Windows.Forms.RichTextBox rtxt_description;
         private System.Windows.Forms.TextBox txt_price;
-        private System.Windows.Forms.NumericUpDown txt_quantity;
+        private System.Windows.Forms.NumericUpDown nud_quantity;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label lbl_product_pic;
         private System.Windows.Forms.Label lbl_description;
@@ -292,5 +311,9 @@
         private System.Windows.Forms.BindingSource sLA_PRODUCTSBindingSource;
         private SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter sLA_PRODUCTSTableAdapter;
         private SlaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private SlaDataSet slaDataSet1;
+        private System.Windows.Forms.BindingSource sLACATEGORIESBindingSource;
+        private SlaDataSetTableAdapters.SLA_CATEGORIESTableAdapter sLA_CATEGORIESTableAdapter;
+        private System.Windows.Forms.ComboBox cbo_category;
     }
 }

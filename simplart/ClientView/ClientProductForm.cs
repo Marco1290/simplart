@@ -14,9 +14,11 @@ namespace simplart
     public partial class fv_product : Form {
 
         private SlaDataSet.SLA_PRODUCTSRow product;
+        private Main main;
 
-        public fv_product(int id)
+        public fv_product(Main main, int id)
         {
+            this.main = main;
             SlaDataSet dataSet = new SlaDataSet();
 
             SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter listProducts = new SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
@@ -28,8 +30,6 @@ namespace simplart
             lbl_product_name.Text = product.PRD_NAME;
             lbl_prd_price.Text = product.PRD_PRICE + " .-";
             rtxt_product_description.Text = product.PRD_DESCRIPTION;
-            nud_quantity.Value = product.PRD_QUANTITY;
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -49,9 +49,16 @@ namespace simplart
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fv_basket fv_Basket = new fv_basket();
-            Dispose();
-            fv_Basket.ShowDialog();
+            SlaDataSet dataSet = new SlaDataSet();
+            SlaDataSet.SLA_PRODUCTSRow productModified  = dataSet.SLA_PRODUCTS.NewSLA_PRODUCTSRow();
+
+            productModified.PRD_ID = product.PRD_ID;
+            productModified.PRD_NAME = product.PRD_NAME;
+            productModified.PRD_PRICE = product.PRD_PRICE;
+            productModified.PRD_QUANTITY = int.Parse(nud_quantity.Text);
+
+            main.addProductToBasket(productModified);
+            main.openBasket();
             
         }
 

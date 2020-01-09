@@ -16,8 +16,12 @@ namespace simplart
     public partial class Main : Form
     {
         private fv_signin signin;
+
+        private fv_basket fv_basket;
+
         public Main(fv_signin signin)
         {
+            fv_basket = new fv_basket();
             this.signin = signin;
             InitializeComponent();
             initUserComponent();
@@ -31,16 +35,25 @@ namespace simplart
             }
             
         }
-       
+        
+        public void addProductToBasket(SlaDataSet.SLA_PRODUCTSRow product)
+        {
+            fv_basket.addProduct(product);
+        }
 
-    public void RemoveText(object sender, EventArgs e)
+        public void openBasket()
+        {
+            fv_basket.ShowDialog();
+        }
+
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (txt_search.Text == "domaines,genres,artistes,titres, ...")
             {
-                if (txt_search.Text == "domaines,genres,artistes,titres, ...")
-                {
-                    txt_search.Text = "";
+                txt_search.Text = "";
                   
-                }
             }
+        }
 
         public void AddText(object sender, EventArgs e)
         {
@@ -106,7 +119,7 @@ namespace simplart
             Control control = (Control)sender;
             FlowLayoutPanel fl = (FlowLayoutPanel)control.Parent;
             Label lbid =  (Label)fl.Controls[0];
-            new fv_product(int.Parse(lbid.Text)).ShowDialog();
+            new fv_product(this, int.Parse(lbid.Text)).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -153,8 +166,7 @@ namespace simplart
 
         private void monPanierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fv_basket panier = new fv_basket();
-            panier.ShowDialog();
+            openBasket();
         }
 
         private void mesProduitsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +195,7 @@ namespace simplart
 
         private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UserAuthService.disconnect();
             this.signin.Show();
             this.Dispose();
         }

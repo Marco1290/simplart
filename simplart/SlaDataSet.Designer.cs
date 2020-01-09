@@ -5570,12 +5570,42 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ORD_PRD_ORD_ID, ORD_PRD_PRD_ID, ORD_PRD_QUANTITY FROM SIMPLART_DATA.SLA_OR" +
                 "DER_PRODUCTS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO \"SIMPLART_DATA\".\"SLA_ORDER_PRODUCTS\" (\"ORD_PRD_ORD_ID\", \"ORD_PRD_PRD_" +
+                "ID\", \"ORD_PRD_QUANTITY\") VALUES (:ORD_PRD_ORD_ID, :ORD_PRD_PRD_ID, :ORD_PRD_QUAN" +
+                "TITY)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ORD_PRD_ORD_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_PRD_ORD_ID";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ORD_PRD_PRD_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_PRD_PRD_ID";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ORD_PRD_QUANTITY";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_PRD_QUANTITY";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5736,6 +5766,37 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<long> ORD_PRD_QUANTITY, int Original_ORD_PRD_ORD_ID, int Original_ORD_PRD_PRD_ID, global::System.Nullable<long> Original_ORD_PRD_QUANTITY) {
             return this.Update(Original_ORD_PRD_ORD_ID, Original_ORD_PRD_PRD_ID, ORD_PRD_QUANTITY, Original_ORD_PRD_ORD_ID, Original_ORD_PRD_PRD_ID, Original_ORD_PRD_QUANTITY);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(decimal ORD_PRD_ORD_ID, decimal ORD_PRD_PRD_ID, global::System.Nullable<decimal> ORD_PRD_QUANTITY) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((decimal)(ORD_PRD_ORD_ID));
+            command.Parameters[1].Value = ((decimal)(ORD_PRD_PRD_ID));
+            if ((ORD_PRD_QUANTITY.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(ORD_PRD_QUANTITY.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -6031,11 +6092,32 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ORD_ID, ORD_STATUS, ORD_USR_ID FROM SIMPLART_DATA.SLA_ORDERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO SIMPLART_DATA.SLA_ORDERS (ORD_STATUS, ORD_USR_ID) VALUES ( :ORD_STATU" +
+                "S, :ORD_USR_ID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ORD_STATUS";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_STATUS";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ORD_USR_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_USR_ID";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6220,6 +6302,41 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<short> ORD_STATUS, global::System.Nullable<int> ORD_USR_ID, int Original_ORD_ID, global::System.Nullable<short> Original_ORD_STATUS, global::System.Nullable<int> Original_ORD_USR_ID) {
             return this.Update(Original_ORD_ID, ORD_STATUS, ORD_USR_ID, Original_ORD_ID, Original_ORD_STATUS, Original_ORD_USR_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<decimal> ORD_STATUS, global::System.Nullable<decimal> ORD_USR_ID) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            if ((ORD_STATUS.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(ORD_STATUS.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((ORD_USR_ID.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(ORD_USR_ID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -6828,7 +6945,7 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[6];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DES" +
@@ -6876,6 +6993,132 @@ namespace simplart.SlaDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PRD_ID";
             this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"INSERT INTO SIMPLART_DATA.SLA_PRODUCTS
+                         (PRD_ID,PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF)
+VALUES        (1,:PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY, :PRD_DESCRIPTION, :PRD_IMAGE_PATH, :PRD_IS_ACTIF)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_USR_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_USR_ID";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_CAT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_CAT_ID";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_NAME";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_PRICE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_PRICE";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_QUANTITY";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_QUANTITY";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 500;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_DESCRIPTION";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_IMAGE_PATH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IMAGE_PATH";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_IS_ACTIF";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IS_ACTIF";
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"UPDATE       SIMPLART_DATA.SLA_PRODUCTS
+SET               PRD_CAT_ID = :PRD_CAT_ID, PRD_NAME = :PRD_NAME, PRD_PRICE = :PRD_PRICE, PRD_QUANTITY = :PRD_QUANTITY, PRD_DESCRIPTION = :PRD_DESCRIPTION, 
+                         PRD_IMAGE_PATH = :PRD_IMAGE_PATH
+WHERE      PRD_ID = :PRD_ID";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_CAT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_CAT_ID";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_NAME";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_PRICE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_PRICE";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_QUANTITY";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_QUANTITY";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 500;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_DESCRIPTION";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_IMAGE_PATH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_IMAGE_PATH";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PRD_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[5].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7320,6 +7563,137 @@ namespace simplart.SlaDataSetTableAdapters {
         public virtual int DeleteQuery(decimal Original_PRD_ID) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((decimal)(Original_PRD_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<decimal> PRD_USR_ID, global::System.Nullable<decimal> PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, global::System.Nullable<decimal> PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH, global::System.Nullable<decimal> PRD_IS_ACTIF) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[4];
+            if ((PRD_USR_ID.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(PRD_USR_ID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((PRD_CAT_ID.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(PRD_CAT_ID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((PRD_NAME == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(PRD_NAME));
+            }
+            if ((PRD_PRICE == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(PRD_PRICE));
+            }
+            if ((PRD_QUANTITY.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(PRD_QUANTITY.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((PRD_DESCRIPTION == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(PRD_DESCRIPTION));
+            }
+            if ((PRD_IMAGE_PATH == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(PRD_IMAGE_PATH));
+            }
+            if ((PRD_IS_ACTIF.HasValue == true)) {
+                command.Parameters[7].Value = ((decimal)(PRD_IS_ACTIF.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(global::System.Nullable<decimal> PRD_CAT_ID, string PRD_NAME, string PRD_PRICE, global::System.Nullable<decimal> PRD_QUANTITY, string PRD_DESCRIPTION, string PRD_IMAGE_PATH, decimal PRD_ID) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[5];
+            if ((PRD_CAT_ID.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(PRD_CAT_ID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((PRD_NAME == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(PRD_NAME));
+            }
+            if ((PRD_PRICE == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(PRD_PRICE));
+            }
+            if ((PRD_QUANTITY.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(PRD_QUANTITY.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((PRD_DESCRIPTION == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(PRD_DESCRIPTION));
+            }
+            if ((PRD_IMAGE_PATH == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(PRD_IMAGE_PATH));
+            }
+            command.Parameters[6].Value = ((decimal)(PRD_ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
