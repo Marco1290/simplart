@@ -41,11 +41,13 @@ namespace simplart
         {
             if(txt_name.TextLength< 1  ||txt_price.TextLength < 1)
             {
-                lbl_error_msg.Text = "Le prix et le nom du produit sont obligatoires !";
+                MessageBox.Show("Le prix et le nom du produit sont obligatoires !");
+                return;
             }
             if (rtxt_description.TextLength < 20)
             {
-                lbl_error_msg.Text += "\n Il faut un description de 20 caractères minimum !";
+                MessageBox.Show("Il faut un description de 20 caractères minimum !");
+                return;
             }
 
 

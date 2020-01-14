@@ -30,6 +30,7 @@ namespace simplart
             lbl_product_name.Text = product.PRD_NAME;
             lbl_prd_price.Text = product.PRD_PRICE + " .-";
             rtxt_product_description.Text = product.PRD_DESCRIPTION;
+            nud_quantity.Maximum = product.PRD_QUANTITY;
         }
 
         private void label2_Click(object sender, EventArgs e)

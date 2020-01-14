@@ -27,6 +27,7 @@ namespace simplart.ArtistView
         {
             product = this.sLA_PRODUCTSTableAdapter.GetDataByID(product_id).First();
 
+            lbl_prod_num.Text = product.PRD_ID.ToString();
             txt_name.Text = product.PRD_NAME;
             txt_price.Text = product.PRD_PRICE;
             nud_quantity.Text = product.PRD_QUANTITY.ToString();

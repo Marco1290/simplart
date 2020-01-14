@@ -53,7 +53,7 @@ namespace simplart
                 SlaDataSet.SLA_USERSRow usersRow;
                 usersRow = dataSet.SLA_USERS.NewSLA_USERSRow();
 
-                usersRow.USR_ID = 1;
+                
                 usersRow.USR_EMAIL = txt_email.Text;
                 usersRow.USR_NAME = txt_username.Text;
                 usersRow.USR_PASSWORD = txt_password.Text;
@@ -72,11 +72,7 @@ namespace simplart
                         break;
                 }
 
-                // Add the row to the Region table
-                dataSet.SLA_USERS.Rows.Add(usersRow);
-
-                // Save the new row to the database
-                usersTableAdapter.Update(dataSet.SLA_USERS);
+                usersTableAdapter.InsertQuery(usersRow.USR_NAME, usersRow.USR_PASSWORD, usersRow.USR_TYPE, usersRow.USR_EMAIL, usersRow.USR_AGE);
 
 
                 lbl_error_msg.Text = "Votre compte a bien été enregistré !";

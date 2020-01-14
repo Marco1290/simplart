@@ -18,7 +18,7 @@ namespace simplart.Services
 
             SlaDataSetTableAdapters.SLA_USERSTableAdapter listLogin = new SlaDataSetTableAdapters.SLA_USERSTableAdapter();
             listLogin.Fill(dataSet.SLA_USERS);
-            SlaDataSet.SLA_USERSRow user = listLogin.GetData().Where(u => u.USR_NAME.Equals(username)).First();
+            SlaDataSet.SLA_USERSRow user = listLogin.GetDataByUser(username).First();
 
            if (user != null && user.USR_PASSWORD.Equals(password)){
                 actual_user = user;
@@ -35,7 +35,7 @@ namespace simplart.Services
 
             SlaDataSetTableAdapters.SLA_USERSTableAdapter listLogin = new SlaDataSetTableAdapters.SLA_USERSTableAdapter();
             listLogin.Fill(dataSet.SLA_USERS);
-            SlaDataSet.SLA_USERSRow user = listLogin.GetData().Where(u => u.USR_NAME.Equals(username) || u.USR_EMAIL.Equals(email) ).First();
+            SlaDataSet.SLA_USERSRow user = listLogin.GetDataByUserEmail(username,email).FirstOrDefault();
             
             if(user != null)
             {

@@ -1834,13 +1834,13 @@ namespace simplart {
             
             private global::System.Data.DataColumn columnUSR_NAME;
             
+            private global::System.Data.DataColumn columnUSR_PASSWORD;
+            
             private global::System.Data.DataColumn columnUSR_TYPE;
             
             private global::System.Data.DataColumn columnUSR_EMAIL;
             
             private global::System.Data.DataColumn columnUSR_AGE;
-            
-            private global::System.Data.DataColumn columnUSR_PASSWORD;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1893,6 +1893,14 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn USR_PASSWORDColumn {
+                get {
+                    return this.columnUSR_PASSWORD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn USR_TYPEColumn {
                 get {
                     return this.columnUSR_TYPE;
@@ -1912,14 +1920,6 @@ namespace simplart {
             public global::System.Data.DataColumn USR_AGEColumn {
                 get {
                     return this.columnUSR_AGE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn USR_PASSWORDColumn {
-                get {
-                    return this.columnUSR_PASSWORD;
                 }
             }
             
@@ -1960,15 +1960,15 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SLA_USERSRow AddSLA_USERSRow(int USR_ID, string USR_NAME, short USR_TYPE, string USR_EMAIL, int USR_AGE, string USR_PASSWORD) {
+            public SLA_USERSRow AddSLA_USERSRow(int USR_ID, string USR_NAME, string USR_PASSWORD, short USR_TYPE, string USR_EMAIL, int USR_AGE) {
                 SLA_USERSRow rowSLA_USERSRow = ((SLA_USERSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         USR_ID,
                         USR_NAME,
+                        USR_PASSWORD,
                         USR_TYPE,
                         USR_EMAIL,
-                        USR_AGE,
-                        USR_PASSWORD};
+                        USR_AGE};
                 rowSLA_USERSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSLA_USERSRow);
                 return rowSLA_USERSRow;
@@ -2000,10 +2000,10 @@ namespace simplart {
             internal void InitVars() {
                 this.columnUSR_ID = base.Columns["USR_ID"];
                 this.columnUSR_NAME = base.Columns["USR_NAME"];
+                this.columnUSR_PASSWORD = base.Columns["USR_PASSWORD"];
                 this.columnUSR_TYPE = base.Columns["USR_TYPE"];
                 this.columnUSR_EMAIL = base.Columns["USR_EMAIL"];
                 this.columnUSR_AGE = base.Columns["USR_AGE"];
-                this.columnUSR_PASSWORD = base.Columns["USR_PASSWORD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2013,21 +2013,21 @@ namespace simplart {
                 base.Columns.Add(this.columnUSR_ID);
                 this.columnUSR_NAME = new global::System.Data.DataColumn("USR_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSR_NAME);
+                this.columnUSR_PASSWORD = new global::System.Data.DataColumn("USR_PASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSR_PASSWORD);
                 this.columnUSR_TYPE = new global::System.Data.DataColumn("USR_TYPE", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSR_TYPE);
                 this.columnUSR_EMAIL = new global::System.Data.DataColumn("USR_EMAIL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSR_EMAIL);
                 this.columnUSR_AGE = new global::System.Data.DataColumn("USR_AGE", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSR_AGE);
-                this.columnUSR_PASSWORD = new global::System.Data.DataColumn("USR_PASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUSR_PASSWORD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUSR_ID}, true));
                 this.columnUSR_ID.AllowDBNull = false;
                 this.columnUSR_ID.Unique = true;
                 this.columnUSR_NAME.MaxLength = 30;
-                this.columnUSR_EMAIL.MaxLength = 50;
                 this.columnUSR_PASSWORD.MaxLength = 255;
+                this.columnUSR_EMAIL.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3970,6 +3970,22 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string USR_PASSWORD {
+                get {
+                    try {
+                        return ((string)(this[this.tableSLA_USERS.USR_PASSWORDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'USR_PASSWORD\' dans la table \'SLA_USERS\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSLA_USERS.USR_PASSWORDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public short USR_TYPE {
                 get {
                     try {
@@ -4018,22 +4034,6 @@ namespace simplart {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string USR_PASSWORD {
-                get {
-                    try {
-                        return ((string)(this[this.tableSLA_USERS.USR_PASSWORDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'USR_PASSWORD\' dans la table \'SLA_USERS\' est DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSLA_USERS.USR_PASSWORDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsUSR_NAMENull() {
                 return this.IsNull(this.tableSLA_USERS.USR_NAMEColumn);
             }
@@ -4042,6 +4042,18 @@ namespace simplart {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetUSR_NAMENull() {
                 this[this.tableSLA_USERS.USR_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsUSR_PASSWORDNull() {
+                return this.IsNull(this.tableSLA_USERS.USR_PASSWORDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetUSR_PASSWORDNull() {
+                this[this.tableSLA_USERS.USR_PASSWORDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4078,18 +4090,6 @@ namespace simplart {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetUSR_AGENull() {
                 this[this.tableSLA_USERS.USR_AGEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsUSR_PASSWORDNull() {
-                return this.IsNull(this.tableSLA_USERS.USR_PASSWORDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetUSR_PASSWORDNull() {
-                this[this.tableSLA_USERS.USR_PASSWORDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6092,24 +6092,40 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ORD_ID, ORD_STATUS, ORD_USR_ID FROM SIMPLART_DATA.SLA_ORDERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO SIMPLART_DATA.SLA_ORDERS (ORD_STATUS, ORD_USR_ID) VALUES ( :ORD_STATU" +
-                "S, :ORD_USR_ID)";
+            this._commandCollection[1].CommandText = @"SELECT        SIMPLART_DATA.SLA_ORDERS.ORD_ID, SIMPLART_DATA.SLA_ORDERS.ORD_STATUS, SIMPLART_DATA.SLA_ORDERS.ORD_USR_ID
+FROM            SIMPLART_DATA.SLA_ORDERS INNER JOIN
+                         SIMPLART_DATA.SLA_ORDER_PRODUCTS ON SIMPLART_DATA.SLA_ORDERS.ORD_ID = SIMPLART_DATA.SLA_ORDER_PRODUCTS.ORD_PRD_ORD_ID INNER JOIN
+                         SIMPLART_DATA.SLA_PRODUCTS ON SIMPLART_DATA.SLA_PRODUCTS.PRD_ID = SIMPLART_DATA.SLA_ORDER_PRODUCTS.ORD_PRD_PRD_ID
+WHERE        (SIMPLART_DATA.SLA_PRODUCTS.PRD_USR_ID = :USR_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRD_USR_ID";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO \"SIMPLART_DATA\".\"SLA_ORDERS\" (\"ORD_STATUS\", \"ORD_USR_ID\") VALUES (:OR" +
+                "D_STATUS, :ORD_USR_ID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_STATUS";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "ORD_STATUS";
-            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_USR_ID";
             param.DbType = global::System.Data.DbType.Decimal;
@@ -6117,7 +6133,11 @@ namespace simplart.SlaDataSetTableAdapters {
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "ORD_USR_ID";
-            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT sq_orders.currval FROM dual";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6139,6 +6159,42 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SlaDataSet.SLA_ORDERSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SlaDataSet.SLA_ORDERSDataTable dataTable = new SlaDataSet.SLA_ORDERSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUser(SlaDataSet.SLA_ORDERSDataTable dataTable, global::System.Nullable<decimal> USR_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((USR_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(USR_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SlaDataSet.SLA_ORDERSDataTable GetDataByUser(global::System.Nullable<decimal> USR_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((USR_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(USR_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             SlaDataSet.SLA_ORDERSDataTable dataTable = new SlaDataSet.SLA_ORDERSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6309,7 +6365,7 @@ namespace simplart.SlaDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(global::System.Nullable<decimal> ORD_STATUS, global::System.Nullable<decimal> ORD_USR_ID) {
-            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[2];
             if ((ORD_STATUS.HasValue == true)) {
                 command.Parameters[0].Value = ((decimal)(ORD_STATUS.Value));
             }
@@ -6337,6 +6393,34 @@ namespace simplart.SlaDataSetTableAdapters {
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> LastInsertedIdQuery() {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[3];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
         }
     }
     
@@ -6949,15 +7033,16 @@ namespace simplart.SlaDataSetTableAdapters {
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DES" +
-                "CRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF FROM SIMPLART_DATA.SLA_PRODUCTS";
+                "CRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF FROM SIMPLART_DATA.SLA_PRODUCTS WHERE PRD" +
+                "_QUANTITY > 0 AND PRD_IS_ACTIF = 1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE  \"SIMPLART_DATA\".\"SLA_PRODUCTS\" SET \"PRD_IS_ACTIF\" = 0   WHERE (\"PRD_ID\" =" +
-                " :Original_PRD_ID)";
+            this._commandCollection[1].CommandText = "UPDATE       SIMPLART_DATA.SLA_PRODUCTS\r\nSET                PRD_IS_ACTIF = 0\r\nWHE" +
+                "RE        (PRD_ID = :PRD_ID) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = ":Original_PRD_ID";
+            param.ParameterName = ":PRD_ID";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
@@ -6967,9 +7052,9 @@ namespace simplart.SlaDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, " +
-                "PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF\r\nFROM            SIMPLART_DATA.SLA" +
-                "_PRODUCTS\r\nWHERE        (PRD_USR_ID = :USR_ID)";
+            this._commandCollection[2].CommandText = "SELECT PRD_CAT_ID, PRD_DESCRIPTION, PRD_ID, PRD_IMAGE_PATH, PRD_IS_ACTIF, PRD_NAM" +
+                "E, PRD_PRICE, PRD_QUANTITY, PRD_USR_ID FROM SIMPLART_DATA.SLA_PRODUCTS WHERE (PR" +
+                "D_USR_ID = :USR_ID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":USR_ID";
@@ -6981,9 +7066,9 @@ namespace simplart.SlaDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        PRD_ID, PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, " +
-                "PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF\r\nFROM            SIMPLART_DATA.SLA" +
-                "_PRODUCTS\r\nWHERE        (PRD_ID = :PRD_ID)";
+            this._commandCollection[3].CommandText = "SELECT PRD_CAT_ID, PRD_DESCRIPTION, PRD_ID, PRD_IMAGE_PATH, PRD_IS_ACTIF, PRD_NAM" +
+                "E, PRD_PRICE, PRD_QUANTITY, PRD_USR_ID FROM SIMPLART_DATA.SLA_PRODUCTS WHERE (PR" +
+                "D_ID = :PRD_ID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PRD_ID";
@@ -6995,9 +7080,7 @@ namespace simplart.SlaDataSetTableAdapters {
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO SIMPLART_DATA.SLA_PRODUCTS
-                         (PRD_ID,PRD_USR_ID, PRD_CAT_ID, PRD_NAME, PRD_PRICE, PRD_QUANTITY, PRD_DESCRIPTION, PRD_IMAGE_PATH, PRD_IS_ACTIF)
-VALUES        (1,:PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY, :PRD_DESCRIPTION, :PRD_IMAGE_PATH, :PRD_IS_ACTIF)";
+            this._commandCollection[4].CommandText = @"INSERT INTO ""SIMPLART_DATA"".""SLA_PRODUCTS"" ( ""PRD_USR_ID"", ""PRD_CAT_ID"", ""PRD_NAME"", ""PRD_PRICE"", ""PRD_QUANTITY"", ""PRD_DESCRIPTION"", ""PRD_IMAGE_PATH"", ""PRD_IS_ACTIF"") VALUES ( :PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY, :PRD_DESCRIPTION, :PRD_IMAGE_PATH, :PRD_IS_ACTIF)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PRD_USR_ID";
@@ -7062,9 +7145,8 @@ VALUES        (1,:PRD_USR_ID, :PRD_CAT_ID, :PRD_NAME, :PRD_PRICE, :PRD_QUANTITY,
             this._commandCollection[5] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = @"UPDATE       SIMPLART_DATA.SLA_PRODUCTS
-SET               PRD_CAT_ID = :PRD_CAT_ID, PRD_NAME = :PRD_NAME, PRD_PRICE = :PRD_PRICE, PRD_QUANTITY = :PRD_QUANTITY, PRD_DESCRIPTION = :PRD_DESCRIPTION, 
-                         PRD_IMAGE_PATH = :PRD_IMAGE_PATH
-WHERE      PRD_ID = :PRD_ID";
+SET                PRD_CAT_ID = :PRD_CAT_ID, PRD_NAME = :PRD_NAME, PRD_PRICE = :PRD_PRICE, PRD_QUANTITY = :PRD_QUANTITY, PRD_DESCRIPTION = :PRD_DESCRIPTION, PRD_IMAGE_PATH = :PRD_IMAGE_PATH
+WHERE        (PRD_ID = :PRD_ID) ";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PRD_CAT_ID";
@@ -7162,23 +7244,6 @@ WHERE      PRD_ID = :PRD_ID";
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SlaDataSet.SLA_PRODUCTSDataTable GetDataByUser(global::System.Nullable<decimal> USR_ID) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((USR_ID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(USR_ID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            SlaDataSet.SLA_PRODUCTSDataTable dataTable = new SlaDataSet.SLA_PRODUCTSDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7559,10 +7624,10 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(decimal Original_PRD_ID) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int DeleteQuery(decimal PRD_ID) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((decimal)(Original_PRD_ID));
+            command.Parameters[0].Value = ((decimal)(PRD_ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7835,14 +7900,14 @@ WHERE      PRD_ID = :PRD_ID";
             tableMapping.DataSetTable = "SLA_USERS";
             tableMapping.ColumnMappings.Add("USR_ID", "USR_ID");
             tableMapping.ColumnMappings.Add("USR_NAME", "USR_NAME");
+            tableMapping.ColumnMappings.Add("USR_PASSWORD", "USR_PASSWORD");
             tableMapping.ColumnMappings.Add("USR_TYPE", "USR_TYPE");
             tableMapping.ColumnMappings.Add("USR_EMAIL", "USR_EMAIL");
             tableMapping.ColumnMappings.Add("USR_AGE", "USR_AGE");
-            tableMapping.ColumnMappings.Add("USR_PASSWORD", "USR_PASSWORD");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SIMPLART_DATA"".""SLA_USERS"" WHERE ((""USR_ID"" = :Original_USR_ID) AND ((:IsNull_USR_NAME = 1 AND ""USR_NAME"" IS NULL) OR (""USR_NAME"" = :Original_USR_NAME)) AND ((:IsNull_USR_TYPE = 1 AND ""USR_TYPE"" IS NULL) OR (""USR_TYPE"" = :Original_USR_TYPE)) AND ((:IsNull_USR_EMAIL = 1 AND ""USR_EMAIL"" IS NULL) OR (""USR_EMAIL"" = :Original_USR_EMAIL)) AND ((:IsNull_USR_AGE = 1 AND ""USR_AGE"" IS NULL) OR (""USR_AGE"" = :Original_USR_AGE)) AND ((:IsNull_USR_PASSWORD = 1 AND ""USR_PASSWORD"" IS NULL) OR (""USR_PASSWORD"" = :Original_USR_PASSWORD)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SIMPLART_DATA"".""SLA_USERS"" WHERE ((""USR_ID"" = :Original_USR_ID) AND ((:IsNull_USR_NAME = 1 AND ""USR_NAME"" IS NULL) OR (""USR_NAME"" = :Original_USR_NAME)) AND ((:IsNull_USR_PASSWORD = 1 AND ""USR_PASSWORD"" IS NULL) OR (""USR_PASSWORD"" = :Original_USR_PASSWORD)) AND ((:IsNull_USR_TYPE = 1 AND ""USR_TYPE"" IS NULL) OR (""USR_TYPE"" = :Original_USR_TYPE)) AND ((:IsNull_USR_EMAIL = 1 AND ""USR_EMAIL"" IS NULL) OR (""USR_EMAIL"" = :Original_USR_EMAIL)) AND ((:IsNull_USR_AGE = 1 AND ""USR_AGE"" IS NULL) OR (""USR_AGE"" = :Original_USR_AGE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_USR_ID";
@@ -7872,6 +7937,24 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_USR_PASSWORD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_USR_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_USR_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -7927,29 +8010,11 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceColumn = "USR_AGE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_USR_PASSWORD";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_USR_PASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"SIMPLART_DATA\".\"SLA_USERS\" (\"USR_ID\", \"USR_NAME\", \"USR_TYPE\", \"USR_E" +
-                "MAIL\", \"USR_AGE\", \"USR_PASSWORD\") VALUES (:USR_ID, :USR_NAME, :USR_TYPE, :USR_EM" +
-                "AIL, :USR_AGE, :USR_PASSWORD)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"SIMPLART_DATA\".\"SLA_USERS\" (\"USR_ID\", \"USR_NAME\", \"USR_PASSWORD\", \"U" +
+                "SR_TYPE\", \"USR_EMAIL\", \"USR_AGE\") VALUES (:USR_ID, :USR_NAME, :USR_PASSWORD, :US" +
+                "R_TYPE, :USR_EMAIL, :USR_AGE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "USR_ID";
@@ -7967,6 +8032,13 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceColumn = "USR_NAME";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "USR_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "USR_TYPE";
             param.DbType = global::System.Data.DbType.Int16;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
@@ -7989,16 +8061,9 @@ WHERE      PRD_ID = :PRD_ID";
             param.IsNullable = true;
             param.SourceColumn = "USR_AGE";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "USR_PASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SIMPLART_DATA"".""SLA_USERS"" SET ""USR_ID"" = :USR_ID, ""USR_NAME"" = :USR_NAME, ""USR_TYPE"" = :USR_TYPE, ""USR_EMAIL"" = :USR_EMAIL, ""USR_AGE"" = :USR_AGE, ""USR_PASSWORD"" = :USR_PASSWORD WHERE ((""USR_ID"" = :Original_USR_ID) AND ((:IsNull_USR_NAME = 1 AND ""USR_NAME"" IS NULL) OR (""USR_NAME"" = :Original_USR_NAME)) AND ((:IsNull_USR_TYPE = 1 AND ""USR_TYPE"" IS NULL) OR (""USR_TYPE"" = :Original_USR_TYPE)) AND ((:IsNull_USR_EMAIL = 1 AND ""USR_EMAIL"" IS NULL) OR (""USR_EMAIL"" = :Original_USR_EMAIL)) AND ((:IsNull_USR_AGE = 1 AND ""USR_AGE"" IS NULL) OR (""USR_AGE"" = :Original_USR_AGE)) AND ((:IsNull_USR_PASSWORD = 1 AND ""USR_PASSWORD"" IS NULL) OR (""USR_PASSWORD"" = :Original_USR_PASSWORD)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SIMPLART_DATA"".""SLA_USERS"" SET ""USR_ID"" = :USR_ID, ""USR_NAME"" = :USR_NAME, ""USR_PASSWORD"" = :USR_PASSWORD, ""USR_TYPE"" = :USR_TYPE, ""USR_EMAIL"" = :USR_EMAIL, ""USR_AGE"" = :USR_AGE WHERE ((""USR_ID"" = :Original_USR_ID) AND ((:IsNull_USR_NAME = 1 AND ""USR_NAME"" IS NULL) OR (""USR_NAME"" = :Original_USR_NAME)) AND ((:IsNull_USR_PASSWORD = 1 AND ""USR_PASSWORD"" IS NULL) OR (""USR_PASSWORD"" = :Original_USR_PASSWORD)) AND ((:IsNull_USR_TYPE = 1 AND ""USR_TYPE"" IS NULL) OR (""USR_TYPE"" = :Original_USR_TYPE)) AND ((:IsNull_USR_EMAIL = 1 AND ""USR_EMAIL"" IS NULL) OR (""USR_EMAIL"" = :Original_USR_EMAIL)) AND ((:IsNull_USR_AGE = 1 AND ""USR_AGE"" IS NULL) OR (""USR_AGE"" = :Original_USR_AGE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "USR_ID";
@@ -8016,6 +8081,13 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceColumn = "USR_NAME";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "USR_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "USR_TYPE";
             param.DbType = global::System.Data.DbType.Int16;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
@@ -8037,13 +8109,6 @@ WHERE      PRD_ID = :PRD_ID";
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "USR_AGE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "USR_PASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_USR_ID";
@@ -8073,6 +8138,24 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_USR_PASSWORD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_USR_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_USR_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -8128,24 +8211,6 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceColumn = "USR_AGE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_USR_PASSWORD";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_USR_PASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "USR_PASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8158,12 +8223,86 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT USR_ID, USR_NAME, USR_TYPE, USR_EMAIL, USR_AGE, USR_PASSWORD FROM SIMPLART" +
+            this._commandCollection[0].CommandText = "SELECT USR_ID, USR_NAME, USR_PASSWORD, USR_TYPE, USR_EMAIL, USR_AGE FROM SIMPLART" +
                 "_DATA.SLA_USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT USR_ID, USR_NAME, USR_PASSWORD, USR_TYPE, USR_EMAIL, USR_AGE FROM SIMPLART" +
+                "_DATA.SLA_USERS WHERE USR_NAME = :PSEUDO";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PSEUDO";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_NAME";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT USR_ID, USR_NAME, USR_PASSWORD, USR_TYPE, USR_EMAIL, USR_AGE FROM SIMPLART" +
+                "_DATA.SLA_USERS WHERE USR_NAME = :USR_NAME AND USR_EMAIL = :USR_EMAIL";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_NAME";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_EMAIL";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO \"SIMPLART_DATA\".\"SLA_USERS\" (\"USR_ID\",\"USR_NAME\", \"USR_PASSWORD\", \"US" +
+                "R_TYPE\", \"USR_EMAIL\", \"USR_AGE\") VALUES ( 1,:USR_NAME, :USR_PASSWORD, :USR_TYPE," +
+                " :USR_EMAIL, :USR_AGE)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_NAME";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_PASSWORD";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_TYPE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_TYPE";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_EMAIL";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USR_AGE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "USR_AGE";
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8185,6 +8324,90 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SlaDataSet.SLA_USERSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SlaDataSet.SLA_USERSDataTable dataTable = new SlaDataSet.SLA_USERSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUser(SlaDataSet.SLA_USERSDataTable dataTable, string PSEUDO) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PSEUDO == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PSEUDO));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SlaDataSet.SLA_USERSDataTable GetDataByUser(string PSEUDO) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PSEUDO == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PSEUDO));
+            }
+            SlaDataSet.SLA_USERSDataTable dataTable = new SlaDataSet.SLA_USERSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserEmail(SlaDataSet.SLA_USERSDataTable dataTable, string USR_NAME, string USR_EMAIL) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((USR_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(USR_NAME));
+            }
+            if ((USR_EMAIL == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(USR_EMAIL));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SlaDataSet.SLA_USERSDataTable GetDataByUserEmail(string USR_NAME, string USR_EMAIL) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((USR_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(USR_NAME));
+            }
+            if ((USR_EMAIL == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(USR_EMAIL));
+            }
             SlaDataSet.SLA_USERSDataTable dataTable = new SlaDataSet.SLA_USERSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8223,7 +8446,7 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_USR_ID, string Original_USR_NAME, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE, string Original_USR_PASSWORD) {
+        public virtual int Delete(int Original_USR_ID, string Original_USR_NAME, string Original_USR_PASSWORD, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_USR_ID));
             if ((Original_USR_NAME == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -8233,37 +8456,37 @@ WHERE      PRD_ID = :PRD_ID";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_USR_NAME));
             }
-            if ((Original_USR_TYPE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_USR_TYPE.Value));
-            }
-            else {
+            if ((Original_USR_PASSWORD == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_USR_EMAIL == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_USR_PASSWORD));
+            }
+            if ((Original_USR_TYPE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((short)(Original_USR_TYPE.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_USR_EMAIL));
-            }
-            if ((Original_USR_AGE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_USR_AGE.Value));
-            }
-            else {
+            if ((Original_USR_EMAIL == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_USR_PASSWORD == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_USR_EMAIL));
+            }
+            if ((Original_USR_AGE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_USR_AGE.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_USR_PASSWORD));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8285,7 +8508,7 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int USR_ID, string USR_NAME, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE, string USR_PASSWORD) {
+        public virtual int Insert(int USR_ID, string USR_NAME, string USR_PASSWORD, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(USR_ID));
             if ((USR_NAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8293,29 +8516,29 @@ WHERE      PRD_ID = :PRD_ID";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(USR_NAME));
             }
-            if ((USR_TYPE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((short)(USR_TYPE.Value));
-            }
-            else {
+            if ((USR_PASSWORD == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((USR_EMAIL == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(USR_PASSWORD));
+            }
+            if ((USR_TYPE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((short)(USR_TYPE.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(USR_EMAIL));
-            }
-            if ((USR_AGE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(USR_AGE.Value));
-            }
-            else {
+            if ((USR_EMAIL == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((USR_PASSWORD == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(USR_EMAIL));
+            }
+            if ((USR_AGE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(USR_AGE.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(USR_PASSWORD));
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8337,7 +8560,7 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int USR_ID, string USR_NAME, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE, string USR_PASSWORD, int Original_USR_ID, string Original_USR_NAME, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE, string Original_USR_PASSWORD) {
+        public virtual int Update(int USR_ID, string USR_NAME, string USR_PASSWORD, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE, int Original_USR_ID, string Original_USR_NAME, string Original_USR_PASSWORD, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(USR_ID));
             if ((USR_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8345,29 +8568,29 @@ WHERE      PRD_ID = :PRD_ID";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(USR_NAME));
             }
-            if ((USR_TYPE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(USR_TYPE.Value));
-            }
-            else {
+            if ((USR_PASSWORD == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((USR_EMAIL == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(USR_PASSWORD));
+            }
+            if ((USR_TYPE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(USR_TYPE.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(USR_EMAIL));
-            }
-            if ((USR_AGE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(USR_AGE.Value));
-            }
-            else {
+            if ((USR_EMAIL == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((USR_PASSWORD == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(USR_EMAIL));
+            }
+            if ((USR_AGE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(USR_AGE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(USR_PASSWORD));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_USR_ID));
             if ((Original_USR_NAME == null)) {
@@ -8378,37 +8601,37 @@ WHERE      PRD_ID = :PRD_ID";
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_USR_NAME));
             }
-            if ((Original_USR_TYPE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(Original_USR_TYPE.Value));
-            }
-            else {
+            if ((Original_USR_PASSWORD == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_USR_EMAIL == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_USR_PASSWORD));
+            }
+            if ((Original_USR_TYPE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((short)(Original_USR_TYPE.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_USR_EMAIL));
-            }
-            if ((Original_USR_AGE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_USR_AGE.Value));
-            }
-            else {
+            if ((Original_USR_EMAIL == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_USR_PASSWORD == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_USR_EMAIL));
+            }
+            if ((Original_USR_AGE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_USR_AGE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_USR_PASSWORD));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8430,8 +8653,61 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string USR_NAME, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE, string USR_PASSWORD, int Original_USR_ID, string Original_USR_NAME, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE, string Original_USR_PASSWORD) {
-            return this.Update(Original_USR_ID, USR_NAME, USR_TYPE, USR_EMAIL, USR_AGE, USR_PASSWORD, Original_USR_ID, Original_USR_NAME, Original_USR_TYPE, Original_USR_EMAIL, Original_USR_AGE, Original_USR_PASSWORD);
+        public virtual int Update(string USR_NAME, string USR_PASSWORD, global::System.Nullable<short> USR_TYPE, string USR_EMAIL, global::System.Nullable<int> USR_AGE, int Original_USR_ID, string Original_USR_NAME, string Original_USR_PASSWORD, global::System.Nullable<short> Original_USR_TYPE, string Original_USR_EMAIL, global::System.Nullable<int> Original_USR_AGE) {
+            return this.Update(Original_USR_ID, USR_NAME, USR_PASSWORD, USR_TYPE, USR_EMAIL, USR_AGE, Original_USR_ID, Original_USR_NAME, Original_USR_PASSWORD, Original_USR_TYPE, Original_USR_EMAIL, Original_USR_AGE);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string USR_NAME, string USR_PASSWORD, global::System.Nullable<decimal> USR_TYPE, string USR_EMAIL, global::System.Nullable<decimal> USR_AGE) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[3];
+            if ((USR_NAME == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(USR_NAME));
+            }
+            if ((USR_PASSWORD == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(USR_PASSWORD));
+            }
+            if ((USR_TYPE.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(USR_TYPE.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((USR_EMAIL == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(USR_EMAIL));
+            }
+            if ((USR_AGE.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(USR_AGE.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -9163,18 +9439,19 @@ WHERE      PRD_ID = :PRD_ID";
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).Connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection(global::simplart.Properties.Settings.Default.SIMPLART_CONNECTION);
-            ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandText = "SIMPLART_DATA.PKG_ORDER.UPDATEQUANTITY";
+            ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandText = "SIMPLART_DATA.PKG_ORDER.ORDERTOTALGET";
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRODUCT_NO";
+            param.ParameterName = "\"ReturnValue\"";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
+            param.Direction = global::System.Data.ParameterDirection.ReturnValue;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDER_ID";
+            param.ParameterName = "ORDER_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
@@ -9183,7 +9460,7 @@ WHERE      PRD_ID = :PRD_ID";
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
             this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).Connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection(global::simplart.Properties.Settings.Default.SIMPLART_CONNECTION);
-            ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandText = "SIMPLART_DATA.PKG_ORDER.ORDERTOTALGET";
+            ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandText = "SIMPLART_DATA.PKG_ORDER.UPDATEQUANTITY";
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "\"ReturnValue\"";
@@ -9195,7 +9472,15 @@ WHERE      PRD_ID = :PRD_ID";
             param.SourceColumn = null;
             ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDER_NO";
+            param.ParameterName = "PRODUCT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ORDER_ID";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
@@ -9235,16 +9520,10 @@ WHERE      PRD_ID = :PRD_ID";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_ORDER_UPDATEQUANTITY(global::System.Nullable<decimal> PRODUCT_NO, global::System.Nullable<decimal> ORDER_ID) {
+        public virtual global::System.Nullable<decimal> PKG_ORDER_ORDERTOTALGET(global::System.Nullable<decimal> ORDER_NO) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[1]));
-            if ((PRODUCT_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(PRODUCT_NO.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((ORDER_ID.HasValue == true)) {
-                command.Parameters[1].Value = ((decimal)(ORDER_ID.Value));
+            if ((ORDER_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(ORDER_NO.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -9254,28 +9533,39 @@ WHERE      PRD_ID = :PRD_ID";
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((command.Parameters[0].Value == null) 
+                        || (command.Parameters[0].Value.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(command.Parameters[0].Value)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> PKG_ORDER_ORDERTOTALGET(global::System.Nullable<decimal> ORDER_NO) {
+        public virtual global::System.Nullable<decimal> PKG_ORDER_UPDATEQUANTITY(global::System.Nullable<decimal> PRODUCT_NO, global::System.Nullable<decimal> ORDER_ID) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[2]));
-            if ((ORDER_NO.HasValue == true)) {
-                command.Parameters[1].Value = ((decimal)(ORDER_NO.Value));
+            if ((PRODUCT_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(PRODUCT_NO.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ORDER_ID.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(ORDER_ID.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

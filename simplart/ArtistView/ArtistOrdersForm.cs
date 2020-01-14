@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplart.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,13 +16,7 @@ namespace simplart.ArtistView
         public fv_orders()
         {
             InitializeComponent();
-            dtg_orders.Rows.Add();
-            dtg_orders.Rows[0].Cells[0].Value = "CMD14145";
-            dtg_orders.Rows[0].Cells[1].Value = "Marco Casta";
-            dtg_orders.Rows[0].Cells[2].Value = "2 x Test";
-            dtg_orders.Rows[0].Cells[3].Value = "Validé";
-            dtg_orders.Rows[0].Cells[4].Value = "10/10/2019";
-            dtg_orders.Rows[0].Cells[5].Value = "120";
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,6 +28,18 @@ namespace simplart.ArtistView
         {
             fv_order_detail fv_Order_Detail = new fv_order_detail();
             fv_Order_Detail.ShowDialog();
+        }
+
+        private void fv_orders_Load(object sender, EventArgs e)
+        {
+           
+            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.SLA_ORDERS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.sLA_ORDERSTableAdapter.FillByUser(this.slaDataSet.SLA_ORDERS, UserAuthService.getUserId());
+
+
+            // TODO: cette ligne de code charge les données dans la table 'slaDataSet.VW_ORDERS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+           
+
         }
     }
 }

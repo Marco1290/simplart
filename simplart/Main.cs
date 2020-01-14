@@ -69,7 +69,7 @@ namespace simplart
             SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter listProducts = new SlaDataSetTableAdapters.SLA_PRODUCTSTableAdapter();
             listProducts.Fill(dataSet.SLA_PRODUCTS);
 
-            foreach (SlaDataSet.SLA_PRODUCTSRow product in listProducts.GetData())
+            foreach (SlaDataSet.SLA_PRODUCTSRow product in listProducts.GetData().Where(p => p.PRD_USR_ID != UserAuthService.getUserId()))
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 

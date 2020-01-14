@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fv_orders));
             this.lbl_title = new System.Windows.Forms.Label();
             this.dtg_orders = new System.Windows.Forms.DataGridView();
@@ -35,13 +36,18 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.btn_validate_orders = new System.Windows.Forms.Button();
             this.btn_cancel_orders = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Articles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaDataSet = new simplart.SlaDataSet();
+            this.vWORDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vW_ORDERSTableAdapter = new simplart.SlaDataSetTableAdapters.VW_ORDERSTableAdapter();
+            this.sLAORDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sLA_ORDERSTableAdapter = new simplart.SlaDataSetTableAdapters.SLA_ORDERSTableAdapter();
+            this.oRDIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDUSRIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWORDERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLAORDERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -61,15 +67,14 @@
             this.dtg_orders.AllowUserToAddRows = false;
             this.dtg_orders.AllowUserToDeleteRows = false;
             this.dtg_orders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtg_orders.AutoGenerateColumns = false;
             this.dtg_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.clientName,
-            this.Articles,
-            this.statut,
-            this.dateCre,
-            this.prix});
-            this.dtg_orders.Location = new System.Drawing.Point(147, 198);
+            this.oRDIDDataGridViewTextBoxColumn,
+            this.oRDSTATUSDataGridViewTextBoxColumn,
+            this.oRDUSRIDDataGridViewTextBoxColumn});
+            this.dtg_orders.DataSource = this.sLAORDERSBindingSource;
+            this.dtg_orders.Location = new System.Drawing.Point(138, 182);
             this.dtg_orders.Name = "dtg_orders";
             this.dtg_orders.ReadOnly = true;
             this.dtg_orders.Size = new System.Drawing.Size(790, 293);
@@ -119,41 +124,49 @@
             this.btn_cancel_orders.Text = "Annuler ";
             this.btn_cancel_orders.UseVisualStyleBackColor = true;
             // 
-            // ID
+            // slaDataSet
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.slaDataSet.DataSetName = "SlaDataSet";
+            this.slaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // clientName
+            // vWORDERSBindingSource
             // 
-            this.clientName.HeaderText = "Nom du client";
-            this.clientName.Name = "clientName";
-            this.clientName.ReadOnly = true;
+            this.vWORDERSBindingSource.DataMember = "VW_ORDERS";
+            this.vWORDERSBindingSource.DataSource = this.slaDataSet;
             // 
-            // Articles
+            // vW_ORDERSTableAdapter
             // 
-            this.Articles.HeaderText = "Articles";
-            this.Articles.Name = "Articles";
-            this.Articles.ReadOnly = true;
+            this.vW_ORDERSTableAdapter.ClearBeforeFill = true;
             // 
-            // statut
+            // sLAORDERSBindingSource
             // 
-            this.statut.HeaderText = "Statut";
-            this.statut.Name = "statut";
-            this.statut.ReadOnly = true;
+            this.sLAORDERSBindingSource.DataMember = "SLA_ORDERS";
+            this.sLAORDERSBindingSource.DataSource = this.slaDataSet;
             // 
-            // dateCre
+            // sLA_ORDERSTableAdapter
             // 
-            this.dateCre.HeaderText = "Date de création";
-            this.dateCre.Name = "dateCre";
-            this.dateCre.ReadOnly = true;
+            this.sLA_ORDERSTableAdapter.ClearBeforeFill = true;
             // 
-            // prix
+            // oRDIDDataGridViewTextBoxColumn
             // 
-            this.prix.HeaderText = "Prix total";
-            this.prix.Name = "prix";
-            this.prix.ReadOnly = true;
+            this.oRDIDDataGridViewTextBoxColumn.DataPropertyName = "ORD_ID";
+            this.oRDIDDataGridViewTextBoxColumn.HeaderText = "ORD_ID";
+            this.oRDIDDataGridViewTextBoxColumn.Name = "oRDIDDataGridViewTextBoxColumn";
+            this.oRDIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oRDSTATUSDataGridViewTextBoxColumn
+            // 
+            this.oRDSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORD_STATUS";
+            this.oRDSTATUSDataGridViewTextBoxColumn.HeaderText = "ORD_STATUS";
+            this.oRDSTATUSDataGridViewTextBoxColumn.Name = "oRDSTATUSDataGridViewTextBoxColumn";
+            this.oRDSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oRDUSRIDDataGridViewTextBoxColumn
+            // 
+            this.oRDUSRIDDataGridViewTextBoxColumn.DataPropertyName = "ORD_USR_ID";
+            this.oRDUSRIDDataGridViewTextBoxColumn.HeaderText = "ORD_USR_ID";
+            this.oRDUSRIDDataGridViewTextBoxColumn.Name = "oRDUSRIDDataGridViewTextBoxColumn";
+            this.oRDUSRIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fv_orders
             // 
@@ -169,7 +182,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fv_orders";
             this.Text = "Mes Commandes";
+            this.Load += new System.EventHandler(this.fv_orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_orders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWORDERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLAORDERSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,11 +200,13 @@
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Button btn_validate_orders;
         private System.Windows.Forms.Button btn_cancel_orders;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateCre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prix;
+        private SlaDataSet slaDataSet;
+        private System.Windows.Forms.BindingSource vWORDERSBindingSource;
+        private SlaDataSetTableAdapters.VW_ORDERSTableAdapter vW_ORDERSTableAdapter;
+        private System.Windows.Forms.BindingSource sLAORDERSBindingSource;
+        private SlaDataSetTableAdapters.SLA_ORDERSTableAdapter sLA_ORDERSTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRDIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRDSTATUSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRDUSRIDDataGridViewTextBoxColumn;
     }
 }

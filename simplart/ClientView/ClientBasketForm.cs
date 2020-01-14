@@ -41,17 +41,30 @@ namespace simplart.ClientView
 
         private void btn_order_Click(object sender, EventArgs e)
         {
-            int id = (int)this.sLA_ORDERSTableAdapter.InsertQuery(1, UserAuthService.getUserId());
-            MessageBox.Show(id.ToString());
-
-            foreach (DataGridViewRow[] product in dtg_basket.Rows)
+            if(dtg_basket.Rows.Count <= 0)
             {
-                MessageBox.Show((int)product.GetValue(0) + " " + product.GetValue(3));
-                this.sLA_ORDER_PRODUCTSTableAdapter.InsertQuery(id, (int)product.GetValue(0), (int)product.GetValue(0));
+                MessageBox.Show("Le panier est vide !");
+                return;
             }
-            
-            
-            
+
+            this.sLA_ORDERSTableAdapter.InsertQuery(1, UserAuthService.getUserId());
+            int id = int.Parse(this.sLA_ORDERSTableAdapter.LastInsertedIdQuery().ToString());
+            SlaDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter = new SlaDataSetTableAdapters.QueriesTableAdapter();
+
+            foreach (DataGridViewRow product in dtg_basket.Rows)
+            {
+                
+                this.sLA_ORDER_PRODUCTSTableAdapter.InsertQuery(id, int.Parse(product.Cells[0].Value.ToString()), int.Parse(product.Cells[3].Value.ToString()));
+                decimal? isValid = queriesTableAdapter.PKG_ORDER_UPDATEQUANTITY(int.Parse(product.Cells[0].Value.ToString()), id);
+                if(isValid != null && isValid <= 0)
+                {
+                    MessageBox.Show("Quantité insuffissante pour le produit "+ product.Cells[1].Value.ToString() + "!");
+                    return;
+                }
+            }
+
+           
+            MessageBox.Show("Votre commande a bien été enregistré !");
         }
 
         private void sLA_ORDER_PRODUCTSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
